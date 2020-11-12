@@ -23,6 +23,7 @@ this.setState({
     sortedCars: cars,
     loading: false
 });
+//nothing to add 
     }
     formatData(items){
         let tempItems = items.map(item => {

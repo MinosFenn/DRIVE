@@ -62,7 +62,7 @@ return car;
         const marque = event.target.marque
         const name = event.target.name
         const value = event.target.value
-        console.log(type,name,value)
+        // console.log(marque,name,value)
     }
     filterCars = () => {
         console.log("hello")

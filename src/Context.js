@@ -7,7 +7,16 @@ class CarProvider extends Component {
         cars: [],
         sortedCars:[],
         featuredCars:[],
-        loading:true
+        loading:true,
+        type:'all',
+        marque:'all',
+        capacity:1,
+        price:0,
+        minPrice:0,
+        maxPrice:0,
+        kilométrage:0,
+        minKm:0,
+        maxKm:0,
     };
     //getData
 
@@ -17,11 +26,19 @@ class CarProvider extends Component {
         let cars = this.formatData(items);
         // console.log(cars)
 let featuredCars = cars.filter(car => car.featured === true);
+// calculate max from the data
+let maxKm = Math.max(...cars.map(item => item.kilométrage))
+let maxPrice = Math.max(...cars.map(item => item.price))
+
 this.setState({
     cars,
     featuredCars,
     sortedCars: cars,
-    loading: false
+    loading: false,
+    price: 0,
+    maxPrice,
+    maxPrice,
+    maxKm
 });
 //nothing to add 
     }
@@ -40,11 +57,23 @@ let tempCars = [...this.state.cars];
 const car = tempCars.find((car) => car.slug === slug);
 return car;
     };
+    // calculate the change in value to reorganise page according to search
+    handleChange = event => {
+        const marque = event.target.marque
+        const name = event.target.name
+        const value = event.target.value
+        console.log(type,name,value)
+    }
+    filterCars = () => {
+        console.log("hello")
+    }
     render() {
         return (
         <CarContext.Provider value={{
             ...this.state,
-        getCar: this.getCar}}>
+        getCar: this.getCar,
+        handleChange: this.handleChange
+        }}>
 {this.props.children}
         </CarContext.Provider>
         );

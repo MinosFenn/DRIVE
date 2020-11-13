@@ -37,7 +37,7 @@ export default [
       année: 1995,
       Kilométrage: "12567 KM",
       boite: "Manuelle",
-      type: "Coupé",
+      type: "cabriolé",
       puissance: "430CH",
       moteur: "6 cylindres à plat",
       cylindré: "3.6L",

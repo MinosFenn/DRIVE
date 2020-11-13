@@ -11,7 +11,6 @@ function CarContainer({ context }) {
     }
         return (
             <div>
-            Hello from Carscontainer
         <CarsFilter cars={cars} />
         <CarsList cars={sortedCars} />
         </div>

@@ -7,7 +7,7 @@ export default function CarList({cars}) {
     
     return (
 <div className="empty-search">
-    <h3>unfortunately no rooms matched your search parameters</h3>
+    <h3>Il n'y a malheureusement pas de véhicules correspondant à cette recherche</h3>
 </div>
     )
 }

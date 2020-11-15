@@ -40,10 +40,10 @@ export default class SingleCar extends Component {
       nom,
       description,
       marque,
-      modèle,
+      modle,
       prix,
       année,
-      kilométrage,
+      kilomtrage,
       boite,
       type,
       puissance,
@@ -74,10 +74,10 @@ export default class SingleCar extends Component {
           <h3>Informations</h3>
           
               <h6>      Marque: {marque}</h6>
-      <h6>Modèle: {modèle}</h6>
+      <h6>Modèle: {modle}</h6>
       <h6>Prix: {prix} €</h6>
       <h6>Année: {année}</h6>
-      <h6>Kilométrage: {kilométrage} KM</h6>
+      <h6>Kilométrage: {kilomtrage} KM</h6>
       <h6>Boite de vitesse: {boite}</h6>
       <h6>Type: {type}</h6>
       <h6>Puissance: {puissance}</h6>

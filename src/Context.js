@@ -1,6 +1,14 @@
 import React, { Component } from "react";
-import items from "./data";
+// import items from "./data";
+import Client from "./Contentful"
+
+Client.getEntries({
+  content_type: "cars"
+}).then(response => console.log(response.items));
+
 const CarContext = React.createContext();
+
+
 // <CarContext.Provider value={'hello}
 class CarProvider extends Component {
   state = {
@@ -20,11 +28,13 @@ class CarProvider extends Component {
     maxKm: 0,
   };
   //getData
-
-  // show card on homepage if featured is true
-  // TODO:a revoir
-  componentDidMount() {
-    let cars = this.formatData(items);
+getData = async () =>{
+  try {
+    let response = await Client.getEntries({
+      content_type: "cars",
+      order:"sys.createdAt"
+    });
+    let cars = this.formatData(response.items);
     // console.log(cars)
     let featuredCars = cars.filter((car) => car.featured === true);
     // calculate max from the data
@@ -41,6 +51,14 @@ class CarProvider extends Component {
       maxKm,
     });
     //nothing to add
+  } catch (error) {
+    console.log(error)
+  }
+}
+  // show card on homepage if featured is true
+  // TODO:a revoir
+  componentDidMount() {
+this.getData()
   }
   formatData(items) {
     let tempItems = items.map((item) => {

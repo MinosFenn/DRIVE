@@ -3,15 +3,16 @@ import React from 'react'
 export default function Form() {
     return (
         <div className="form">
-          <form name="contact" method="POST"  netlify>
+          <form name="contact" method="POST"  netlify netlify-honeypot="bot-field" hidden>
+          <input type="hidden" name="form-name" value="contact" />
   <p>
-    <label>Votre Nom et Prénom <br></br><input type="text" name="name" /></label>   
+    <label>Votre Nom et Prénom <br></br><input required type="text" name="name" /></label>   
   </p>
   <p>
-    <label>Votre Email: <br></br><input type="email" name="email" /></label>
+    <label>Votre Email: <br></br><input required type="email" name="email" /></label>
   </p>
   <p>
-    <label>Votre N° de Téléphone: <br></br><input type="tel" name="tel" /></label>
+    <label>Votre N° de Téléphone: <br></br><input required type="tel" name="tel" /></label>
   </p>
   <p>
     <label for="requete">Votre demande concerne <br></br>
@@ -25,11 +26,12 @@ export default function Form() {
     </select></label>
   </p>
   <p>
-    <label>Message: <br></br><textarea rows="15" name="message"></textarea></label>
+    <label>Message: <br></br><textarea required rows="15" name="message"></textarea></label>
   </p>
   <div data-netlify-recaptcha="true"></div>
-
-    <button className="submit-btn" type="submit">Envoyer</button>
+<p>
+    <button type="submit" className="submit-btn" >Envoyer</button>
+    </p>
 </form>
         </div>
     )

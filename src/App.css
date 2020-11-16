@@ -1,10 +1,12 @@
 * {
+  cursor: url('../src/images/drive-cursor2.png'), auto;	
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+/* #003366 #262626*/
 :root {
-  --primaryColor: #003366;
+  --primaryColor: #003366 ;
   --mainWhite: #fff;
   --offWhite: #f7f7f7;
   --mainBlack: #222;
@@ -15,6 +17,26 @@
   --mainSpacing: 3px;
   --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
   --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--mainWhite); 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--mainBlack); 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primaryColor); 
 }
 /* globals */
 body {
@@ -294,6 +316,98 @@ h6 {
   }
 }
 /*end of services */
+/* Contact page */
+.Google-maps {
+  width: 100%;
+  height: 300px;
+  border:0px; 
+}
+.contact-layout {
+
+  label {
+    size:60px;
+  }
+}
+input, select {
+  width: 80%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: var(--primaryColor);
+  color: white;
+}
+
+textarea {
+  background-color: var(--primaryColor);
+  color: white;
+  height:auto;
+  width: 80%;
+}
+.contact-img {
+  width:300px;
+}
+.contact-page h2 {
+  margin: 10px;
+
+}
+.contact-page {
+  width: 75vw;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-row-gap: 2rem;
+  grid-column-gap: 50px;
+  grid-template-columns: 1fr 1fr;
+  margin: 2rem auto;
+
+}
+
+.submit-btn, .btn-contact {
+  display: inline-block;
+  width: 80%;
+  justify-content: space-between;
+  text-align: center;
+
+  text-decoration: none;
+  letter-spacing: var(--mainSpacing);
+  color: var(--offWhite);
+  background: var(--primaryColor);
+  padding: 0.4rem 0.9rem;
+  border: var(--primaryColor) 3px solid ;
+  transition: var(--mainTransition);
+  text-transform: uppercase;
+  cursor: pointer;
+  margin: 1rem
+}
+.submit-btn:hover, .btn-contact:hover {
+  background: transparent;
+  color: var(--primaryColor);
+}
+
+
+
+.left-column {
+  width:100%;
+  height: auto;
+  align-items: center;
+  text-align: center;
+  background-color: var(--offWhite);
+  box-shadow:         inset 0 0 1px #000000;
+  vertical-align: middle;
+padding: 20px 0 0 0;
+}
+
+.right-column {
+  width:100%;
+  box-shadow: 1px 1px 5px #0000003f;
+  padding: 20px;
+  align-items: center;
+  text-align: center;
+}
+/* End of contact */
 /* featured rooms */
 
 .featured-rooms {

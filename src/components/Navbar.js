@@ -38,10 +38,10 @@ export default class Navbar extends Component {
               <li>
                 <Link to="/cars"> Collection </Link>{" "}
               </li>
-
+{/* 
               <li>
                 <Link to="/events"> Evenements </Link>
-              </li>
+              </li> */}
               <li>
                 <Link to="/services"> Services </Link>
               </li>

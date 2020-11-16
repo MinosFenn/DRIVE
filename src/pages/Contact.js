@@ -4,8 +4,8 @@ import logo from "../images/Asset 18@0.5x.png";
 import { Link } from "react-router-dom";
 
 import Banner from '../components/Banner'
-import Form from '../components/Form'
-function Contact() {
+import ContactForm from '../components/ContactForm'
+export default function Contact() {
     return (
         <>
         {/* <Hero hero="carsHero">
@@ -35,8 +35,7 @@ function Contact() {
           <h2>Nous contacter</h2>
 
 
-          <Form />
-
+          <ContactForm />
           </div>    
           </div>
  
@@ -45,4 +44,3 @@ function Contact() {
 )
 }
 
-export default Contact

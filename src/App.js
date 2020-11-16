@@ -8,7 +8,7 @@ import Events from "./pages/Events";
 import SingleEvent from "./pages/SingleEvent";
 import Error from "./pages/Error";
 import Services from "./pages/Services";
-import Contact from "./pages/Contact";
+import ContactForm from "./pages/Contact";
 import About from "./pages/About";
 import {Route, Switch} from 'react-router-dom';
 import Navbar from "./components/Navbar";
@@ -26,7 +26,7 @@ function App() {
   <Route exact path="/Events/:slug" component={SingleEvent} /> */}
   <Route exact path="/About" component={About} />
   <Route exact path="/Services" component={Services} />
-  <Route exact path="/Contact" component={Contact} />
+  <Route exact path="/Contact" component={ContactForm} />
   <Route component={Error} />
   </Switch>
   <Footer />

@@ -1,9 +1,10 @@
 import React from 'react'
+import {Link} from "react-router-dom"
 
 export default function Form() {
     return (
         <div className="form">
-          <form name="contact" method="POST"  action="/contact" netlify netlify-honeypot="bot-field">
+          <form name="contact" method="post"  action="/contact" onSubmit="submit" data-netlify="true" netlify-honeypot="bot-field">
           <input type="hidden" name="form-name" value="contact" />
   <p>
     <label>Votre Nom et Prénom <br></br><input required type="text" name="name" /></label>   

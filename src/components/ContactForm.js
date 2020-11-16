@@ -4,8 +4,9 @@ import React from 'react'
 export default function ContactForm() {
     return (
         <div className="form">
-          <form name="contact"  action="/contact" onSubmit="submit" method="post"  data-netlify="true" netlify-honeypot="bot-field">
-          <input type="hidden" name="form-name" value="contact" />
+         <form name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+  {/* You still need to add the hidden input with the form name to your JSX form */}
+  <input type="hidden" name="form-name" value="contact" />
   <p>
     <label>Votre Nom et Prénom <br></br><input required type="text" name="name" /></label>   
   </p>

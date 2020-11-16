@@ -3,7 +3,7 @@ import React from 'react'
 export default function Form() {
     return (
         <div className="form">
-          <form name="contact" method="POST"  data-netlify="true" data-netlify-recaptcha="true">
+          <form name="contact" method="POST"  data-netlify="true">
   <p>
     <label>Votre Nom et Prénom <br></br><input type="text" name="name" /></label>   
   </p>
@@ -29,9 +29,7 @@ export default function Form() {
   </p>
   <div data-netlify-recaptcha="true"></div>
 
-  <p>
     <button className="submit-btn" type="submit">Envoyer</button>
-  </p>
 </form>
         </div>
     )

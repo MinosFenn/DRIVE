@@ -316,6 +316,132 @@ h6 {
   }
 }
 /*end of services */
+/* Nos Services */
+.nos-services {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+  grid-row-gap: 2rem;
+  grid-column-gap: 50px;
+}
+
+.column-services{
+
+  width:100%;
+  height: 100%;
+  background-color: #66001a;
+  color:white;
+}
+.content {
+
+
+}
+
+.content-bg {
+position: sticky;
+    /* top: 0; */
+    left: 0;
+    bottom: 0;
+    width: auto;
+    background-image: url(./images/test4.png);
+    height: 98VH;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 1;
+    overflow-y: hidden;
+	max-height: 100%; 
+    transition-property: all;
+    transition-duration: 1s;
+    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
+.content-bg:hover{
+  -webkit-transform: scale(0.3);
+  -ms-transform: scale(0.3);
+  transform: scale(0.3);
+
+  opacity: 0;
+}
+/* End of nos services */
+
+/* Footer */
+.footer {
+  height: 310px;
+  box-sizing: border-box;
+  /* left: 0; */
+  /* bottom: 0; */
+  padding: 0 300px;
+  background-color: var(--mainBlack);
+}
+.row-footer {
+  background-color: var(--mainBlack);
+  border-top-style: 2px solid white ;
+
+}
+.contact-img-footer {
+width:150px
+}
+
+/* Create three equal columns that floats next to each other */
+.column-footer {
+  float: left;
+  width: 33.33%;
+  padding: 30px 50px 30px 50px;
+  height: 280px; 
+
+  text-align: center;
+  background-color: var(--mainBlack);
+  /* Should be removed. Only for demonstration */
+}
+.bottom-footer {
+  text-align: center;
+  color: white;
+  background-color: var(--mainBlack);
+  border-top-style: 2px solid white ;
+
+}
+
+.column-footer p, h2{
+  color: var(--hardGrey);
+
+}
+.column-footer span {
+  display: inline-block;
+  color: var(--hardGrey);
+  font-size: 2rem;
+  margin: 2rem 0.5rem ;
+}
+
+.column-footer br {
+  padding: 0; 
+  margin: 0;
+}
+/* Clear floats after the columns */
+.row-footer:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+@media screen and (max-width: 1440px) {
+  .footer {
+    height: 300px;
+    box-sizing: border-box;
+    /* left: 0; */
+    /* bottom: 0; */
+    padding: 0 0 0 0;
+    background-color: var(--mainBlack);
+  }
+}
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 970px) {
+  .column-footer {
+    width: 100%;
+    padding: 30px 50px 30px 50px;
+
+  }
+}
+/* End footer */
+
 /* Contact page */
 .Google-maps {
   width: 100%;
@@ -323,8 +449,11 @@ h6 {
   border:0px; 
 }
 .contact-layout {
-
-
+  background-image: url("./images/test4.png");
+height: 100vh;
+background-position: center; /* Center the image */
+background-repeat: no-repeat; /* Do not repeat the image */
+background-size: cover; /* Resize the background image to cover the entire container */
 }
 input, select {
   width: 80%;
@@ -359,7 +488,8 @@ textarea {
   grid-row-gap: 2rem;
   grid-column-gap: 50px;
   grid-template-columns: 1fr 1fr;
-  margin: 2rem auto;
+  margin: 0rem auto;
+  padding: 2rem;
 
 }
 
@@ -392,14 +522,15 @@ textarea {
   height: auto;
   align-items: center;
   text-align: center;
-  background-color: var(--offWhite);
-  box-shadow:         inset 0 0 1px #000000;
+  background-color:var(--offWhite);
+  box-shadow: 1px 1px 5px #0000004d;
   vertical-align: middle;
 padding: 20px 0 0 0;
 }
 
 .right-column {
   width:100%;
+  background-color: var(--offWhite);
   box-shadow: 1px 1px 5px #0000003f;
   padding: 20px;
   align-items: center;

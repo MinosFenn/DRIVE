@@ -2,25 +2,37 @@ import React from 'react'
 
 
 const ContactForm = () => (
-  <div className='contact animated fadeInRightBig'>
-    <div className='contact-inner'>
-
-      <div className='contact-section'>
-        <h2 className='section-header'>Get in touch!</h2>
-
-        {/* build in form by Netlify are amazing! - https://www.netlify.com/docs/form-handling/ -*/}
-        <form className='contact-form' name='contact-form' method='POST' action='/thanks' data-netlify='true' data-netlify-honeypot='bot-field'>
-          <input type='hidden' name='form-name' value='contact-form' />
-          <input type='hidden' name='bot-field'/>
-          
-          <input type='email' name='email' placeholder='Your email'/>
-          <input type='subject' name='subject' placeholder='Subject'/>
-          <textarea name='message' placeholder='How can I help you today?'/>
-          <button type='submit'>send</button>
-        </form>
-      </div>
-    </div>
-
-  </div>
+  <div className="form">
+             <form name="contact" method="post"  action="/contact" onSubmit="submit" data-netlify="true" netlify-honeypot="bot-field">
+             <input type="hidden" name="form-name" value="contact" />
+     <p>
+       <label>Votre Nom et Prénom <br></br><input required type="text" name="name" /></label>   
+     </p>
+     <p>
+       <label>Votre Email: <br></br><input required type="email" name="email" /></label>
+     </p>
+     <p>
+       <label>Votre N° de Téléphone: <br></br><input required type="tel" name="tel" /></label>
+     </p>
+     <p>
+       <label for="requete">Votre demande concerne <br></br>
+       <select name="requete">
+         <option value="depot">Dépôt</option>
+         <option value="vente">Vente</option>
+         <option value="achat">Achat</option>
+         <option value="commande">Commande</option>
+         <option value="autre">Autre</option>
+  
+       </select></label>
+     </p>
+     <p>
+       <label>Message: <br></br><textarea required rows="15" name="message"></textarea></label>
+     </p>
+     <div data-netlify-recaptcha="true"></div>
+ <p>
+       <button type="submit" className="submit-btn" >Envoyer</button>
+       </p>
+   </form>
+           </div>
 )
 export default ContactForm

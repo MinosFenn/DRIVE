@@ -12,11 +12,15 @@ import ContactForm from "./pages/Contact";
 import About from "./pages/About";
 import {Route, Switch} from 'react-router-dom';
 import Navbar from "./components/Navbar";
+import ScrollToTop from "./components/ScrollToTop"
+
 import Footer from "./components/Footer";
 
 function App() {
   return (
 <>
+<ScrollToTop />
+
 <Navbar />
 <Switch>
 <Route exact path="/" component={Home}/>

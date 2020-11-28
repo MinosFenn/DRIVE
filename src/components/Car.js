@@ -8,7 +8,7 @@ export default function Car({ car }) {
 
     const{nom,slug,images,prix,kilométrage} = car;
 
-    return (<article className="room">
+    return (<article className="car">
     <div className="img-container">
       <img src={images[0] || defaultImg} alt="single car" />
       <div className="name-top">
@@ -22,7 +22,7 @@ export default function Car({ car }) {
       <div className="price-bottom">
       <h6>{prix} €</h6>
 </div>
-      <Link to={`/cars/${slug}`} className="btn-primary room-link">
+      <Link to={`/cars/${slug}`} className="btn-primary car-link">
         Détails
       </Link>
       </div> 

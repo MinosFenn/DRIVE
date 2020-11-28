@@ -13,12 +13,16 @@ import About from "./pages/About";
 import {Route, Switch} from 'react-router-dom';
 import Navbar from "./components/Navbar";
 import ScrollToTop from "./components/ScrollToTop"
+import SimpleReactLightbox from "simple-react-lightbox";
+
 
 import Footer from "./components/Footer";
 
 function App() {
   return (
 <>
+<SimpleReactLightbox>
+
 <ScrollToTop />
 
 <Navbar />
@@ -34,6 +38,8 @@ function App() {
   <Route component={Error} />
   </Switch>
   <Footer />
+  </SimpleReactLightbox>
+
 </>
   );
 }

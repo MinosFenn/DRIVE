@@ -18,9 +18,9 @@ export default class FeaturedCars extends Component {
     });
 
     return (
-      <section className="featured-rooms">
+      <section className="featured-cars">
         <Title title="Notre sélection" />
-        <div className="featured-rooms-center">
+        <div className="featured-cars-center">
           {loading ? <Loading /> : cars}
         </div>{" "}
         </section>

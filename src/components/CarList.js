@@ -11,8 +11,8 @@ export default function CarList({cars}) {
 </div>
     )
 }
-return <section className="roomslist">
-    <div className="roomslist-center">
+return <section className="carslist">
+    <div className="carslist-center">
         {cars.map(item => {
                 return <Car key={item.id} car={item} />
             })

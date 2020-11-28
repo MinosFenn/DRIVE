@@ -1,9 +1,11 @@
-import React, { Component } from "react";
+import React, { useState, Component } from "react";
 import logo from "../images/logotypo.png";
 import { FaAlignRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 export default class Navbar extends Component {
+
+ 
   state = {
     isOpen: false,
   };
@@ -12,12 +14,17 @@ export default class Navbar extends Component {
       isOpen: !this.state.isOpen,
     });
   };
+  closeMobileMenu = () => {
+    this.setState({
+      isOpen: !this.state.isOpen,
+    });
+  }
   render() {
     return (
       <nav className="navbar">
         <div className="nav-center">
           <div className="nav-header">
-            <Link to="/">
+            <Link to="/" >
               <img src={logo} alt="Drive Automobiles logo" />
             </Link>{" "}
             <button
@@ -33,24 +40,24 @@ export default class Navbar extends Component {
               className={this.state.isOpen ? "nav-links show-nav" : "nav-links"}
             >
               <li>
-                <Link to="/"> Accueil </Link>{" "}
+                <Link to="/" onClick={this.closeMobileMenu}> Accueil </Link>{" "}
               </li>{" "}
               <li>
-                <Link to="/cars"> Collection </Link>{" "}
+                <Link to="/cars" onClick={this.closeMobileMenu}> Collection </Link>{" "}
               </li>
 {/* 
               <li>
                 <Link to="/events"> Evenements </Link>
               </li> */}
               <li>
-                <Link to="/services"> Services </Link>
+                <Link to="/services" onClick={this.closeMobileMenu}> Services </Link>
               </li>
 
               <li>
-                <Link to="/about"> A propos </Link>
+                <Link to="/about" onClick={this.closeMobileMenu} > A propos </Link>
               </li>
               <li>
-                <Link to="/contact"> Contact </Link>
+                <Link to="/contact" onClick={this.closeMobileMenu}> Contact </Link>
               </li>
             </ul>{" "}
         </div>{" "}

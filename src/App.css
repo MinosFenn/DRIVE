@@ -5,7 +5,7 @@
 }
 /* #003366 #262626*/
 :root {
-  --primaryColor: #003366 ;
+  --primaryColor: #000000 ;
   --mainWhite: #fff;
   --offWhite: #f7f7f7;
   --mainBlack: #222;
@@ -217,10 +217,16 @@ h6 {
 /* End of Hero */
 /* Banner */
 .banner {
+  left: 0;
+    bottom: 0;
+    height: 100%;
+    width: -webkit-fill-available;
+    position: absolute;
   display: inline-block;
-  background: rgba(0, 0, 0, 0.5);
+  background: linear-gradient(rgba(95, 95, 95, 0.24), rgb(0, 0, 0) 75%);
   color: var(--mainWhite);
-  padding: 2rem 1rem;
+  padding: 30rem 2rem;
+
   text-align: center;
   text-transform: capitalize;
   letter-spacing: var(--mainSpacing);
@@ -240,7 +246,7 @@ h6 {
 }
 @media screen and (min-width: 576px) {
   .banner {
-    padding: 2rem 3rem;
+    padding: 30rem 3rem;
   }
   .banner h1 {
     font-size: 3rem;
@@ -248,7 +254,7 @@ h6 {
 }
 @media screen and (min-width: 992px) {
   .banner {
-    padding: 2rem 6rem;
+    padding: 30rem 6rem;
   }
   .banner h1 {
     font-size: 4rem;
@@ -546,7 +552,6 @@ padding: 20px 0 0 0;
   }
 }
 
-
 /* End of contact */
 /* featured cars */
 
@@ -573,70 +578,71 @@ padding: 20px 0 0 0;
     max-width: 1170px;
   }
 }
-/* end pf featured cars */
+/* end of featured cars */
+
 /* car */
 .car {
   /* box-shadow: var(--lightShadow); */
-  transition: var(--mainTransition);
+  transition: box-shadow 2s ease-in-out;
+  border-radius: 10px;
+  /* border-top-right-radius: 1rem;
+  border-top-left-radius: 1rem; */
+
 }
 .car:hover {
+  border-radius: 10px;
   box-shadow: var(--lightShadow);
+}
+
+.car-container {
+  border: 2px solid black;
+  border-radius: 10px;
+  overflow: hidden;
+
 }
 
 .img-container {
   position: relative;
+  overflow: hidden;
+
 }
 .img-container img {
+  transform-origin: 50% 65%;
+  transition: transform 3s, filter 3s ease-in-out;
+  filter: brightness(100%);
   width: 100%;
   display: block;
-  transition: var(--mainTransition);
 }
+
+.img-container:hover img {
+  filter: brightness(65%);
+  transform: scale(2.5);
+}
+
+
 .name-top {
-  position: absolute;
-width: 100%;
-  top: 0;
-  left: 0;
+z-index:1;
   background:  var(--primaryColor);
   color: var(--mainWhite);
   padding: 0.5rem 0.3rem 0.5rem 0.3rem;
-  border-bottom-right-radius: 1rem;
-  border-bottom-left-radius: 1rem;
-
-  font-size: 1.1rem;
+border-top: 2px solid #ffffff;
+  font-size: 1rem;
   text-align: center;
   transition: var(--mainTransition);
 }
-.km-bottom {
-  float: left;
-  width: 50%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  background: rgb(229,229,229, 0.8)
+.info-bottom {
+
+
+  background: var(--primaryColor)
   ;
-  color: var(--hardGrey);
+  color: var(--mainWhite);
   padding: 0.3rem 0.6rem 0.5rem;
   /* border-bottom-right-radius: 1rem; */
-  border-right: 2px solid var(--hardGrey);
   font-size: 0.5rem;
-  text-align: center;
   transition: var(--mainTransition);
 }
 
-.price-bottom {
-  position: absolute;
-  float: left;
-  width: 50%;
-  bottom: 0;
-  right: 0;
-  background:  rgb(229,229,229, 0.8);
-  color: var(--hardGrey);
-  padding: 0.3rem 0.6rem 0.5rem;
-  /* border-bottom-right-radius: 1rem; */
-  font-size: 0.5rem;
-  text-align: center;
-  transition: var(--mainTransition);
-}
+
 .name-top, .price-bottom, .km-bottom, h6 {
   margin-bottom: 0;
   font-size: 1.1rem;
@@ -647,15 +653,14 @@ width: 100%;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: scale(0);
-  transition: all 0.3s linear;
+  border-radius:5px;
+  transform: translate(-50%, 250%) scale(1);
+  transition:  2s ease-in-out;
 }
 .img-container:hover {
 
 }
-.img-container:hover img {
-  /* opacity: 0.3; */
-}
+
 .img-container:hover .km-bottom {
   opacity: 0;
 }
@@ -664,8 +669,7 @@ width: 100%;
 }
 .img-container:hover .car-link {
   cursor: pointer ;
-
-  transform: translate(-50%, -50%) scale(1);
+  transform: translate(-50%, -50%) scale(1.5);
 }
 .car-info {
   background: var(--darkGrey);

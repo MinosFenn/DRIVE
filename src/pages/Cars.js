@@ -1,21 +1,20 @@
-import React from 'react'
-import Hero from '../components/Hero'
-import Banner from '../components/Banner'
-import CarsContainer from "../components/CarContainer"
+import React from "react";
+import Hero from "../components/Hero";
+import Banner from "../components/Banner";
+import CarsContainer from "../components/CarContainer";
 
 const Cars = () => {
-    return (
-        <>
-        <Hero hero="carsHero">
-        <Banner title="Collection" subtitle="Retrouvez toute notre collection">
+  return (
+    <>
+      <Hero hero="carsHero">
+        <Banner
+          title="Stock"
+          subtitle="Retrouvez toute notre collection"
+        ></Banner>
+      </Hero>
+      <CarsContainer />
+    </>
+  );
+};
 
-        </Banner>
-</Hero>        
-<CarsContainer />
-</>
-)
-}
-
-export default Cars
-
-
+export default Cars;

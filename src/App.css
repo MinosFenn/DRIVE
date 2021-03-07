@@ -201,18 +201,18 @@ h6 {
 .defaultHero,
 .carsHero {
   min-height: calc(100vh - 66px);
-  background: url("./images/porsche911banner.jpg") center/cover no-repeat;
+  background: url("./images/IMG_9358.jpg") center/cover no-repeat;
   display: flex;
-  align-items: center;
+  align-items: top;
   justify-content: center;
 }
 .carsHero {
   background-image: url("./images/bmw-m5.jpg");
-  min-height: 60vh;
+  /* min-height: 60vh; */
 }
 .carsHero2 {
   background-image: url("./images/FerrariF430.jpg");
-  min-height: 60vh;
+  /* min-height: 60vh; */
 }
 /* End of Hero */
 /* Banner */
@@ -223,7 +223,7 @@ h6 {
     width: -webkit-fill-available;
     position: absolute;
   display: inline-block;
-  background: linear-gradient(rgba(95, 95, 95, 0.24), rgb(0, 0, 0) 75%);
+  background: linear-gradient(rgba(95, 95, 95, 0), rgba(0, 0, 0, 0.692) 80%);
   color: var(--mainWhite);
   padding: 30rem 2rem;
 
@@ -606,6 +606,9 @@ padding: 20px 0 0 0;
   overflow: hidden;
 
 }
+
+
+
 .img-container img {
   transform-origin: 50% 65%;
   transition: transform 3s, filter 3s ease-in-out;
@@ -651,13 +654,14 @@ border-top: 2px solid #ffffff;
 }
 .car-link {
   position: absolute;
-  top: 50%;
+  top: 25%;
   left: 50%;
   border-radius:5px;
   transform: translate(-50%, 250%) scale(1);
   transition:  2s ease-in-out;
 }
 .img-container:hover {
+  background: linear-gradient(rgba(95, 95, 95, 0.24), rgb(0, 0, 0));
 
 }
 
@@ -868,11 +872,23 @@ margin-bottom: 0.5rem;;
 .carslist {
   padding: 5rem 0;
 }
+
+@media screen and (min-width: 860px) {
+.carslist-center {
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+
+}
+
+.carslist-center .car-link {
+  top: 35%;
+}
+}
+
 .carslist-center {
   width: 80vw;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-row-gap: 2rem;
   grid-column-gap: 30px;
 }

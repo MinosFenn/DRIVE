@@ -12,7 +12,11 @@ export default function Car({ car }) {
     <article className="car">
       <div className="car-container">
         <div className="img-container">
-          <img src={images[0] || defaultImg} alt="single car" />
+          <img
+            src={images[0] || defaultImg}
+            className="test"
+            alt="single car"
+          />
           {/* <div className="name-top">
             <h6>{nom}</h6>
           </div> */}

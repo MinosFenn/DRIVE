@@ -5,10 +5,13 @@ import { Link } from "react-router-dom";
 import Services from "../components/Services";
 import FeaturedCars from "../components/FeaturedCars";
 import Maps from "../components/Maps";
+import VideoBanner from "../components/VideoBanner";
 
 export default function Home() {
   return (
     <>
+      {" "}
+      {/* <VideoBanner /> */}
       <Hero hero="defaultHero">
         <Banner
           image="/static/media/Asset 18@0.5x.63bd1b2f.png"

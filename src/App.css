@@ -654,7 +654,7 @@ border-top: 2px solid #ffffff;
 }
 .car-link {
   position: absolute;
-  top: 25%;
+  top: 35%;
   left: 50%;
   border-radius:5px;
   transform: translate(-50%, 250%) scale(1);

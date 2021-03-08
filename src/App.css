@@ -792,14 +792,12 @@ ul.details li .title {
 }
 .info {
   width:90%;
-  box-shadow: 0 0 black;
-  box-shadow: 0 0 black;
   margin: auto;
   padding: 2rem 4rem;
   color: black;
   background-color: white;
   border-radius: 5px;
-  box-shadow: inset 0 0 1px #000000;
+  box-shadow: inset 0 0 1px #00000091;
   align-items: center;
   text-align: center;
   transition: 1s ease-in-out;
@@ -808,7 +806,7 @@ ul.details li .title {
 .info:hover {
 
   /* border-radius: 10px; */
-  box-shadow: inset 0 0 5px #000000;
+  box-shadow: inset 0 2px 5px #00000098;
 }
 .info p {
 
@@ -872,7 +870,7 @@ margin-bottom: 0.5rem;;
 @media screen and (max-width: 860px) {
 .single-car {
   width: 100%;
-  margin: 2rem;
+  margin: auto;
 }
   .desc {
     padding: 1rem 2rem;

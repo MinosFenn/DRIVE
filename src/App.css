@@ -752,7 +752,7 @@ cursor:zoom-in;
   position: relative;
 }
 .single-car-info {
-  width: 100%;
+  width: 90%;
   display: grid;
   grid-template-columns: 1fr;
   margin: 0rem auto;
@@ -791,9 +791,10 @@ ul.details li .title {
     color: #0c121c;
 }
 .info {
+  width:90%;
   box-shadow: 0 0 black;
   box-shadow: 0 0 black;
-  margin: 5rem;
+  margin: auto;
   padding: 2rem 4rem;
   color: black;
   background-color: white;
@@ -860,7 +861,7 @@ margin-bottom: 0.5rem;;
 
   .desc {
     padding: 1rem 2rem;
-    width:100vw;
+    width:90vw;
   }
   .info {
     margin: 1rem;
@@ -871,7 +872,7 @@ margin-bottom: 0.5rem;;
 @media screen and (max-width: 860px) {
 .single-car {
   width: 100%;
-  margin: 0;
+  margin: 2rem;
 }
   .desc {
     padding: 1rem 2rem;

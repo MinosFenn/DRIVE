@@ -18,7 +18,7 @@ const VideoBanner = () => {
             //   title="DRIVE"
             subtitle="Trouvez la voiture de vos rêves"
           >
-            <Link to="/cars" className="btn-primary">
+            <Link to="/cars" className="btn-video">
               Notre collection
             </Link>
           </Banner>

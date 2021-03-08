@@ -11,8 +11,8 @@ export default function Home() {
   return (
     <>
       {" "}
-      {/* <VideoBanner /> */}
-      <Hero hero="defaultHero">
+      <VideoBanner />
+      {/* <Hero hero="defaultHero">
         <Banner
           image="/static/media/Asset 18@0.5x.63bd1b2f.png"
           //   title="DRIVE"
@@ -22,7 +22,7 @@ export default function Home() {
             Notre collection
           </Link>
         </Banner>
-      </Hero>
+      </Hero> */}
       <Services />
       <FeaturedCars />
       <Maps />

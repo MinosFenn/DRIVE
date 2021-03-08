@@ -709,7 +709,7 @@ border-bottom:2px solid #000000;
 
 .single-car {
   width: 70%;
-  margin:1rem auto;
+  margin: 1rem auto;
   padding-bottom: 20px;
   border-radius: 5px;
 
@@ -832,6 +832,8 @@ ul.details li .title {
   padding: 2rem;
   margin:  1rem auto;
   background-color: var(--offWhite);
+  border-radius:5px;
+
 }
 .car-extras h6 {
   text-transform: capitalize;
@@ -851,15 +853,14 @@ ul.details li .title {
   grid-row-gap: 1rem;
 padding-bottom: 2rem;
 margin-bottom: 0.5rem;;
-
-  border-bottom: #003366 solid 3px;
+  border-bottom: var(--mainBlack) solid 3px;
 }
 
 @media screen and (max-width: 1440px) {
 
   .desc {
     padding: 1rem 2rem;
-    width:90vw;
+    width:100%;
   }
   .info {
     margin: 1rem;
@@ -870,13 +871,13 @@ margin-bottom: 0.5rem;;
 @media screen and (max-width: 860px) {
 .single-car {
   width: 100%;
-  margin: auto;
+  /* margin: auto; */
 }
   .desc {
     padding: 1rem 2rem;
   }
   .info {
-    margin: 1rem;
+    margin: 1rem auto;
     padding: 2rem 1rem;
 
 }

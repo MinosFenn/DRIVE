@@ -16,7 +16,13 @@ const VideoBanner = () => {
       data-aos-duration="5000"
       className={classes.Container}
     >
-      <video autoPlay="autoplay" loop="loop" muted className={classes.Video}>
+      <video
+        rel="preload"
+        autoPlay="autoplay"
+        loop="loop"
+        muted
+        className={classes.Video}
+      >
         <source src={DriveVideo} type="video/mp4" />
         Your browser does not support the video tag.
       </video>

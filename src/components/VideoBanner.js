@@ -1,12 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Banner from "../components/Banner";
 import { Link } from "react-router-dom";
 import classes from "../VideoBanner.module.css";
 import DriveVideo from "../images/homepage-drive-video.mp4";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const VideoBanner = () => {
+  useEffect(() => {
+    Aos.init();
+  }, []);
   return (
-    <div className={classes.Container}>
+    <div
+      data-aos="slide-right"
+      data-aos-duration="5000"
+      className={classes.Container}
+    >
       <video autoPlay="autoplay" loop="loop" muted className={classes.Video}>
         <source src={DriveVideo} type="video/mp4" />
         Your browser does not support the video tag.

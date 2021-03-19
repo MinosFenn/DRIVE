@@ -1,16 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import defaultImg from "../images/test1.jpg";
 import PropTypes from "prop-types";
-
+import Aos from "aos";
+import "aos/dist/aos.css";
 export default function Car({ car }) {
   // console.log(car)
 
   const { nom, slug, images, prix, kilométrage } = car;
-
+  useEffect(() => {
+    Aos.init({ duration: 3000 });
+  }, []);
   return (
     <article className="car">
-      <div className="car-container">
+      <div data-aos="fade-up" className="car-container">
         <div className="img-container">
           <img
             src={images[0] || defaultImg}

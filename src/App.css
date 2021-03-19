@@ -3,6 +3,11 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+img {
+  width:100%;
+  height:auto;
+}
 /* #003366 #262626*/
 :root {
   --primaryColor: #000000 ;
@@ -86,10 +91,11 @@ h6 {
   transition: var(--mainTransition);
   text-transform: uppercase;
   cursor: pointer;
+  border-radius: 5px;
 }
 .btn-primary:hover {
   background: transparent;
-  color: var(--offWhite);
+  color: var(--primaryColor);
 }
 
 .btn-video {
@@ -223,13 +229,18 @@ h6 {
   display: flex;
   align-items: top;
   justify-content: center;
+  position: relative;
 }
 .carsHero {
   background-image: url("./images/bmw-m5.jpg");
+  position: relative;
+
   /* min-height: 60vh; */
 }
 .carsHero2 {
   background-image: url("./images/FerrariF430.jpg");
+  position: relative;
+
   /* min-height: 60vh; */
 }
 /* End of Hero */
@@ -241,7 +252,7 @@ h6 {
     width: -webkit-fill-available;
     position: absolute;
   display: inline-block;
-  background: linear-gradient(rgba(255, 255, 255, 0.178) 40%, rgb(0, 0, 0) 75%);
+  background: linear-gradient( rgba(255, 255, 255, 0) 50%, rgb(0, 0, 0) 80%);
   color: var(--mainWhite);
   padding: 65% 2rem;
 
@@ -250,6 +261,7 @@ h6 {
   letter-spacing: var(--mainSpacing);
 }
 .banner h1 {
+  
   font-size: 2.5rem;
 }
 .banner div {
@@ -261,9 +273,15 @@ h6 {
 .banner p {
   font-size: 1.2rem;
 }
+.container {
+  position: relative;
+height: auto;    overflow: hidden;
+  /* margin-bottom: 500px; */
+}
 @media screen and (min-width: 576px) {
   .banner {
     /* padding: 30rem 3rem; */
+    padding: 35% ;
 
   }
   .banner h1 {
@@ -744,6 +762,7 @@ cursor:zoom-in;
 }
 .big-image {
   width: 100%;
+  height:auto;
 }
 .single-car-images img {
   width: 30%;
@@ -860,10 +879,9 @@ margin-bottom: 0.5rem;;
 
   .desc {
     padding: 1rem 2rem;
-    width:100%;
   }
   .info {
-    margin: 1rem;
+    margin-bottom: 1rem;
     padding: 2rem 1rem;
 
 }
@@ -875,6 +893,8 @@ margin-bottom: 0.5rem;;
 }
   .desc {
     padding: 1rem 2rem;
+    width:90vw;
+
   }
   .info {
     margin: 1rem auto;
@@ -882,7 +902,7 @@ margin-bottom: 0.5rem;;
 
 }
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1400px) {
   .single-car-images,
   .single-car-info,
   .car-extras {

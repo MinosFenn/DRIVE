@@ -6,12 +6,16 @@ import CarsContainer from "../components/CarContainer";
 const Cars = () => {
   return (
     <>
-      <Hero hero="carsHero">
-        <Banner
-          title="Stock"
-          subtitle="Retrouvez toute notre collection"
-        ></Banner>
-      </Hero>
+      <div className="container">
+        <Hero hero="carsHero">
+          {" "}
+          <Banner
+            title="Stock"
+            subtitle="Retrouvez toute notre collection"
+          ></Banner>
+        </Hero>
+      </div>
+
       <CarsContainer />
     </>
   );

@@ -3,14 +3,19 @@ import { Link } from "react-router-dom";
 import defaultImg from "../images/test1.jpg";
 import PropTypes from "prop-types";
 import Aos from "aos";
+import { IntlProvider, FormattedMessage, FormattedNumber } from "react-intl";
 import "aos/dist/aos.css";
 export default function Car({ car }) {
   // console.log(car)
-
   const { nom, slug, images, prix, kilométrage } = car;
   useEffect(() => {
     Aos.init({ duration: 3000 });
   }, []);
+  const euro = new Intl.NumberFormat("fr-FR", {
+    style: "currency",
+    currency: "EUR",
+    minimumFractionDigits: 2,
+  });
   return (
     <article className="car">
       <div data-aos="fade-up" className="car-container">
@@ -28,7 +33,19 @@ export default function Car({ car }) {
           </div>
 
           <div className="info-bottom">
-            <h6>{prix} €</h6>
+            <h6>
+              {" "}
+              <IntlProvider>
+                <FormattedNumber
+                  value={prix}
+                  style="currency"
+                  currencyDisplay="symbol"
+                  currency="EUR"
+                />
+                €
+              </IntlProvider>
+              console.log(euro.format({prix}))
+            </h6>
           </div>
 
           <Link to={`/cars/${slug}`} className="btn-primary car-link ">

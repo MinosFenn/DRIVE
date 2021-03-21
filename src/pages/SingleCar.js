@@ -61,6 +61,16 @@ export default class SingleCar extends Component {
     } = car;
     console.log(car);
 
+    const euro = new Intl.NumberFormat("fr-FR", {
+      style: "currency",
+      currency: "EUR",
+      minimumFractionDigits: 2,
+    });
+
+    const km = new Intl.NumberFormat("fr-FR", {
+      style: "unit",
+      unit: "kilometer",
+    });
     return (
       <>
         {" "}
@@ -99,7 +109,7 @@ export default class SingleCar extends Component {
                   </li>
                   <li>
                     <span className="title">Prix:</span>{" "}
-                    <span className="value">{prix} €</span>
+                    <span className="value">{euro.format(prix)}</span>
                   </li>
                   <li>
                     <span className="title">Année:</span>{" "}
@@ -107,7 +117,7 @@ export default class SingleCar extends Component {
                   </li>
                   <li>
                     <span className="title">Kilométrage:</span>{" "}
-                    <span className="value">{kilomtrage} KM</span>
+                    <span className="value">{km.format(kilomtrage)}</span>
                   </li>
                   <li>
                     <span className="title">Boite de vitesse:</span>{" "}

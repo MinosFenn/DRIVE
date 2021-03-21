@@ -3,11 +3,10 @@ import { Link } from "react-router-dom";
 import defaultImg from "../images/test1.jpg";
 import PropTypes from "prop-types";
 import Aos from "aos";
-import { IntlProvider, FormattedMessage, FormattedNumber } from "react-intl";
 import "aos/dist/aos.css";
 export default function Car({ car }) {
   // console.log(car)
-  const { nom, slug, images, prix, kilométrage } = car;
+  const { nom, slug, images, prix, kilomtrage } = car;
   useEffect(() => {
     Aos.init({ duration: 3000 });
   }, []);
@@ -15,6 +14,10 @@ export default function Car({ car }) {
     style: "currency",
     currency: "EUR",
     minimumFractionDigits: 2,
+  });
+  const km = new Intl.NumberFormat("fr-FR", {
+    style: "unit",
+    unit: "kilometer",
   });
   return (
     <article className="car">
@@ -29,23 +32,11 @@ export default function Car({ car }) {
             <h6>{nom}</h6>
           </div> */}
           <div className="info-bottom">
-            <h6>{kilométrage} KM</h6>
+            <h6>{km.format(kilomtrage)}</h6>
           </div>
 
           <div className="info-bottom">
-            <h6>
-              {" "}
-              <IntlProvider>
-                <FormattedNumber
-                  value={prix}
-                  style="currency"
-                  currencyDisplay="symbol"
-                  currency="EUR"
-                />
-                €
-              </IntlProvider>
-              {euro.format({ prix })}
-            </h6>
+            <h6> {euro.format(prix)}</h6>
           </div>
 
           <Link to={`/cars/${slug}`} className="btn-primary car-link ">

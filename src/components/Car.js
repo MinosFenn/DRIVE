@@ -44,7 +44,7 @@ export default function Car({ car }) {
                 />
                 €
               </IntlProvider>
-              console.log(euro.format({prix}))
+              {euro.format({ prix })}
             </h6>
           </div>
 

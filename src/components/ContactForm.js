@@ -2,20 +2,19 @@ import React, { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
-const ContactForm = () => {
+export default function ContactForm() {
   useEffect(() => {
     Aos.init({ duration: 2000 });
   }, []);
   return (
     <div className="form">
       <form
-        name="contact"
-        action="/contact"
-        method="POST"
+        name="contact--drive"
+        method="post"
         data-netlify="true"
-        netlify-honeypot="bot-field"
+        onSubmit="submit"
       >
-        <input type="hidden" name="form-name" value="contact" />
+        <input type="hidden" name="form-name" value="contact-drive" />
         <p>
           <label>
             Votre Nom et Prénom <br></br>
@@ -61,5 +60,4 @@ const ContactForm = () => {
       </form>
     </div>
   );
-};
-export default ContactForm;
+}

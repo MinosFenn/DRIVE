@@ -7,12 +7,11 @@ const ContactForm = () => {
     Aos.init({ duration: 2000 });
   }, []);
   return (
-    <div data-aos="fade-up" className="form">
+    <div className="form">
       <form
         name="contact"
-        method="post"
         action="/contact"
-        onSubmit="submit"
+        method="POST"
         data-netlify="true"
         netlify-honeypot="bot-field"
       >

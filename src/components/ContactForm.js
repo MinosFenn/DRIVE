@@ -10,9 +10,8 @@ export default function ContactForm() {
     <div className="form">
       <form
         name="contact--drive"
-        method="post"
-        data-netlify="true"
-        onSubmit="submit"
+        action="https://formspree.io/f/xjvjbzjo"
+        method="POST"
       >
         <input type="hidden" name="form-name" value="contact-drive" />
         <p>

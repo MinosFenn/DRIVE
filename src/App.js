@@ -17,6 +17,7 @@ import SimpleReactLightbox from "simple-react-lightbox";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import Footer from "./components/Footer";
+import MessengerCustomerChat from "react-messenger-customer-chat";
 
 function App() {
   useEffect(() => {
@@ -24,6 +25,10 @@ function App() {
   }, []);
   return (
     <>
+      <MessengerCustomerChat
+        pageId="102979778436253"
+        appId="2987196288176000"
+      />
       <SimpleReactLightbox>
         <ScrollToTop />
         <Navbar />

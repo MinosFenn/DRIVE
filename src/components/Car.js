@@ -21,7 +21,7 @@ export default function Car({ car }) {
   });
   return (
     <article className="car">
-      <div data-aos="fade-up" className="car-container">
+      <div className="car-container">
         <div className="img-container">
           <img
             src={images[0] || defaultImg}

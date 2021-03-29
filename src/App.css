@@ -10,10 +10,10 @@ img {
 }
 /* #003366 #262626*/
 :root {
-  --primaryColor: #000000 ;
+  --primaryColor: #0f0f0f ;
   --mainWhite: #fff;
   --offWhite: #f7f7f7;
-  --mainBlack: #222;
+  --mainBlack: rgb(32, 32, 32);
   --mainGrey: #ececec;
   --darkGrey: #e5e5e5;
   --hardGrey: 	#A9A9A9;
@@ -106,7 +106,7 @@ h6 {
   background: var(--primaryColor);
   padding: 0.4rem 0.9rem;
   margin: 30px;
-
+border-radius: 5px;
   border: 3px solid var(--darkGrey);
   transition: var(--mainTransition);
   text-transform: uppercase;
@@ -507,13 +507,16 @@ input, select {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-  background-color: var(--primaryColor);
-  color: white;
+  background-color: var(--darkGrey);
+  color: var(--primaryColor);
+}
+.contact-text-label {
+  text-align: left;
 }
 
 textarea {
-  background-color: var(--primaryColor);
-  color: white;
+  background-color: var(--darkGrey);
+  color:var(--primaryColor);
   height:auto;
   width: 80%;
 }
@@ -542,7 +545,7 @@ textarea {
   width: 80%;
   justify-content: space-between;
   text-align: center;
-
+border-radius: 5px;
   text-decoration: none;
   letter-spacing: var(--mainSpacing);
   color: var(--offWhite);

@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import "./App.css";
 import Home from "./pages/Home";
 import Cars from "./pages/Cars";
+import Sold from "./pages/Sold";
 import SingleCar from "./pages/SingleCar";
 import Events from "./pages/Events";
 import SingleEvent from "./pages/SingleEvent";
@@ -20,9 +21,6 @@ import Footer from "./components/Footer";
 import MessengerCustomerChat from "react-messenger-customer-chat";
 
 function App() {
-  useEffect(() => {
-    Aos.init({ duration: 3000 });
-  }, []);
   return (
     <>
       <MessengerCustomerChat
@@ -38,6 +36,8 @@ function App() {
           <Route exact path="/Cars/:slug" component={SingleCar} />
           {/* <Route exact path="/Events" component={Events} />
   <Route exact path="/Events/:slug" component={SingleEvent} /> */}
+          <Route exact path="/Sold" component={Sold} />
+
           <Route exact path="/About" component={About} />
           <Route exact path="/Services" component={Services} />
           <Route exact path="/Contact" component={ContactForm} />

@@ -80,6 +80,10 @@ h6 {
   margin-bottom: 1.5em;
 }
 
+.white-text {
+  color:var(--darkGrey)
+}
+
 .btn-primary {
   display: inline-block;
   text-decoration: none;
@@ -238,10 +242,30 @@ border-radius: 5px;
   /* min-height: 60vh; */
 }
 .carsHero2 {
-  background-image: url("./images/FerrariF430.jpg");
+  background-image: url("./images/IMG_9358.jpg");
   position: relative;
+  vertical-align: bottom;
+  background-position: bottom;
+  background-size: cover;
+  min-height: calc(100vh - 66px);
+  display: flex;
+  background-repeat: no-repeat;
+  justify-content: center;
+}
 
-  /* min-height: 60vh; */
+.carsHero3 {
+  background-image: url("./images/road-210913_1920.jpg");
+  position: relative;
+  vertical-align: bottom;
+  background-position: bottom;
+  background-size: cover;
+
+  min-height: calc(100vh - 66px);
+  width:100vw;
+  display: flex;
+  background-repeat: no-repeat;
+
+  justify-content: center;
 }
 /* End of Hero */
 /* Banner */
@@ -252,7 +276,7 @@ border-radius: 5px;
     width: -webkit-fill-available;
     position: absolute;
   display: inline-block;
-  background: linear-gradient( rgba(255, 255, 255, 0) 50%, rgb(0, 0, 0) 80%);
+  background: linear-gradient( rgba(255, 255, 255, 0) 50%, rgb(15, 15, 15) 80%);
   color: var(--mainWhite);
   padding: 65% 2rem;
 
@@ -278,6 +302,21 @@ border-radius: 5px;
 height: auto;    overflow: hidden;
   /* margin-bottom: 500px; */
 }
+
+.grid-container {
+  display: grid;
+
+  grid-template-columns: 1fr;
+}
+
+.item1 {
+}
+
+.item2 {
+  padding:25% 10%;
+  background-color: var(--primaryColor);
+}
+
 @media screen and (min-width: 576px) {
   .banner {
     /* padding: 30rem 3rem; */
@@ -287,6 +326,7 @@ height: auto;    overflow: hidden;
   .banner h1 {
     font-size: 3rem;
   }
+
 }
 @media screen and (min-width: 992px) {
   .banner {
@@ -296,6 +336,9 @@ height: auto;    overflow: hidden;
   }
   .banner h1 {
     font-size: 4rem;
+  }
+  .grid-container {  
+    grid-template-columns: 1fr  1fr;
   }
 }
 /* End of Banner */

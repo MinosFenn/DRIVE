@@ -6,10 +6,10 @@ import Car from "./Car";
 
 import Loading from "./Loading";
 
-export default class FeaturedCars extends Component {
+export default class SoldCars extends Component {
   static contextType = CarContext;
   render() {
-    let { loading, featuredCars: cars } = this.context;
+    let { loading, soldCars: cars } = this.context;
 
     cars = cars.map((car) => {
       // console.log(car)
@@ -19,7 +19,7 @@ export default class FeaturedCars extends Component {
 
     return (
       <section className="featured-cars">
-        <Title title="Notre sélection" />
+        <Title title="Elles ont prises la route" />
         <div className="featured-cars-center">
           {loading ? <Loading /> : cars}
         </div>{" "}

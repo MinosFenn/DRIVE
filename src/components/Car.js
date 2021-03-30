@@ -6,7 +6,7 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 export default function Car({ car }) {
   // console.log(car)
-  const { nom, slug, images, prix, kilomtrage } = car;
+  const { nom, slug, images, prix, kilomtrage, soldcars } = car;
   useEffect(() => {
     Aos.init({ duration: 3000 });
   }, []);
@@ -58,6 +58,7 @@ Car.propTypes = {
     slug: PropTypes.string.isRequired,
     images: PropTypes.arrayOf(PropTypes.string).isRequired,
     prix: PropTypes.number.isRequired,
+    soldcars: PropTypes.bool.isRequired,
     kilométrage: PropTypes.number.isRequired,
   }),
 };

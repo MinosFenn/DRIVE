@@ -1,13 +1,12 @@
 import React, { Component } from "react";
 // import items from "./data";
-import Client from "./Contentful"
+import Client from "./Contentful";
 
 Client.getEntries({
-  content_type: "cars"
-}).then(response => console.log(response.items));
+  content_type: "cars",
+}).then((response) => console.log(response.items));
 
 const CarContext = React.createContext();
-
 
 // <CarContext.Provider value={'hello}
 class CarProvider extends Component {
@@ -15,6 +14,7 @@ class CarProvider extends Component {
     cars: [],
     sortedCars: [],
     featuredCars: [],
+    soldCars: [],
     loading: true,
     type: "Tous",
     marque: "Toutes marques",
@@ -23,42 +23,46 @@ class CarProvider extends Component {
     minPrice: 0,
     maxPrice: 100000000,
     kilométrage: 0,
-    prixasc: false, 
+    prixasc: false,
     minKm: 0,
     maxKm: 0,
   };
   //getData
-getData = async () =>{
-  try {
-    let response = await Client.getEntries({
-      content_type: "cars",
-      order:"sys.createdAt"
-    });
-    let cars = this.formatData(response.items);
-    // console.log(cars)
-    let featuredCars = cars.filter((car) => car.featured === true);
-    // calculate max from the data
-    let maxKm = Math.max(...cars.map((item) => item.kilométrage));
-    let maxPrice = Math.max(...cars.map((item) => item.prix));
+  getData = async () => {
+    try {
+      let response = await Client.getEntries({
+        content_type: "cars",
+        order: "sys.createdAt",
+      });
+      let cars = this.formatData(response.items);
+      // console.log(cars)
+      let featuredCars = cars.filter((car) => car.featured === true);
+      let availableCars = cars.filter((car) => car.soldcars === false);
+      let soldCars = cars.filter((car) => car.soldcars === true);
+      // calculate max from the data
+      let maxKm = Math.max(...cars.map((item) => item.kilométrage));
+      let maxPrice = Math.max(...cars.map((item) => item.prix));
 
-    this.setState({
-      cars,
-      featuredCars,
-      sortedCars: cars,
-      loading: false,
-      prix: maxPrice,
-      maxPrice,
-      maxKm,
-    });
-    //nothing to add
-  } catch (error) {
-    console.log(error)
-  }
-}
+      this.setState({
+        cars,
+        featuredCars,
+        availableCars,
+        soldCars,
+        sortedCars: availableCars,
+        loading: false,
+        prix: maxPrice,
+        maxPrice,
+        maxKm,
+      });
+      //nothing to add
+    } catch (error) {
+      console.log(error);
+    }
+  };
   // show card on homepage if featured is true
   // TODO:a revoir
   componentDidMount() {
-this.getData()
+    this.getData();
   }
   formatData(items) {
     let tempItems = items.map((item) => {
@@ -102,6 +106,7 @@ this.getData()
       marque,
       prix,
       prixasc,
+      availableCars,
       capacity,
       minPrice,
       maxPrice,
@@ -111,7 +116,7 @@ this.getData()
     } = this.state;
 
     //all cars
-    let tempCars = [...cars];
+    let tempCars = cars.filter((car) => car.soldcars === false);
 
     // transform value
     prix = parseInt(prix);
@@ -126,8 +131,7 @@ this.getData()
 
     //filter by price asc
     if (prixasc) {
-    tempCars = tempCars.sort((car) => car.prix < prix ? 1 : -1)
-    console.log(tempCars)
+      tempCars = tempCars.sort((car) => (car.prix < prix ? 1 : -1));
     }
 
     //change state

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Hero from "../components/Hero";
 import Banner from "../components/Banner";
 import SoldCars from "../components/SoldCars";
@@ -11,7 +11,7 @@ const Sold = () => {
           {" "}
           <Banner
             title="Vendu"
-            subtitle="Le modèle de vos rêves figure sur cette liste ? passez commande !"
+            subtitle="Un modèle vous plaît ? passez commande !"
           ></Banner>
         </Hero>
       </div>

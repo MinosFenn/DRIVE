@@ -1,6 +1,9 @@
 .Container {
     position: relative;
-height: auto;    overflow: hidden;
+height: 100%;   
+margin: auto;
+overflow: hidden;
+
     /* margin-bottom: 500px; */
 }
 
@@ -28,37 +31,61 @@ height: auto;    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: linear-gradient( rgba(255, 255, 255, 0) 50%, rgb(15, 15, 15) 90%);
+
     /* padding: 20px 20px; */
   }
+.Divider {
+
+    width: 10rem;
+    height: 5px;
+    background: var(--primaryColor);
+    margin: 2rem auto;
+}
   .SubContent {
       text-align: center;
       padding: 10px;
+      position: absolute;
+    bottom: 20px;
     }
-  .SubContent p {
-      color: #eeeeeead;
-      font-size: 1.3rem;
+  .SubContent h2 {
+    color: var(--darkGrey);
 
   }
-  .SubContent button {
-      font-weight: bold;
-      margin-top: 30px;
-      color: #f1f1f1;
-      border: #f1f1f1 1px solid;
-      padding: 10px 5px;
-      background-color: hsla(0, 0%, 0%, 0);
-      font-size: 1.25rem;
-      border-radius: 5px;
+
+  .SubContent a {
+    color: var(--darkGrey);
+    font-size: 1.3rem;
+text-decoration: none;
+}
+
+  .VideoButton {
+  display: inline-block;
+  text-decoration: none;
+  letter-spacing: var(--mainSpacing);
+  color: var(--offWhite);
+  background: var(--primaryColor);
+  padding: 0.4rem 0.9rem;
+  margin: 10px 0;
+border-radius: 5px;
+  border: 3px solid var(--darkGrey);
+  transition: var(--mainTransition);
+  text-transform: uppercase;
+  cursor: pointer;
   }
+
   .SubContent button:hover {
-      background-color: #f1f1f1;
-      color: #000000c0;
+      background-color: #f1f1f100;
+      color: #ffffffc0;
   }
 
   .SubContent img {
     width: 300px;
     height: 300px;
+    position: relative;
     border-radius: 50%;
     display: block;
-    margin: 15px auto;
+    margin: auto;
+    /* margin: 45vh auto; */
     /* border: #f1f1f1 1px solid; */
   }

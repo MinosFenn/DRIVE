@@ -47,10 +47,9 @@ export default function ContactForm() {
         <p>
           <label>
             Message: <br></br>
-            <textarea required rows="15" name="message"></textarea>
+            <textarea required rows="10" name="message"></textarea>
           </label>
         </p>
-        <div data-netlify-recaptcha="true"></div>
         <p>
           <button type="submit" className="submit-btn">
             Envoyer

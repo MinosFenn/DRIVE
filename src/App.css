@@ -276,7 +276,7 @@ border-radius: 5px;
     width: -webkit-fill-available;
     position: absolute;
   display: inline-block;
-  background: linear-gradient( rgba(255, 255, 255, 0) 50%, rgb(15, 15, 15) 80%);
+  background: linear-gradient( rgba(255, 255, 255, 0) 50%, rgb(15, 15, 15) 90%);
   color: var(--mainWhite);
   padding: 65% 2rem;
 
@@ -320,7 +320,7 @@ height: auto;    overflow: hidden;
 @media screen and (min-width: 576px) {
   .banner {
     /* padding: 30rem 3rem; */
-    padding: 35% ;
+    padding: 35% 2rem;
 
   }
   .banner h1 {
@@ -330,7 +330,7 @@ height: auto;    overflow: hidden;
 }
 @media screen and (min-width: 992px) {
   .banner {
-    padding: 35% 2rem;
+    padding: 15% 2rem;
 
     /* padding: 30rem 6rem; */
   }
@@ -532,12 +532,12 @@ width:150px
 /* Contact page */
 .Google-maps {
   width: 100%;
-  height: 300px;
+  height: 200px;
   border:0px; 
 }
 .contact-layout {
   background-image: url("./images/test4.png");
-height: 100%;
+height: 100vh;
 background-position: center; /* Center the image */
 background-repeat: no-repeat; /* Do not repeat the image */
 background-size: cover; /* Resize the background image to cover the entire container */
@@ -564,7 +564,7 @@ textarea {
   width: 80%;
 }
 .contact-img {
-  width:300px;
+  width:200px;
 }
 .contact-page h2 {
   margin: 10px;
@@ -609,7 +609,6 @@ border-radius: 5px;
 
 .left-column {
   width:100%;
-  height: auto;
   align-items: center;
   text-align: center;
   background-color:var(--offWhite);
@@ -626,6 +625,7 @@ padding: 20px 0 0 0;
   align-items: center;
   text-align: center;
 }
+
 @media screen and (max-width: 1200px) {
   .contact-page {
     width: 100vw;
@@ -634,6 +634,26 @@ padding: 20px 0 0 0;
     padding: 2rem;
   
   }
+  .contact-layout {
+    height: 100%;
+  }
+
+}
+
+@media screen and (min-width: 2200px) {
+
+  .right-column {
+    margin: auto;
+padding: auto 5%;
+  }
+  /* .left-column {
+
+    margin: auto;
+height: none;
+padding: auto 5%;
+  } */
+
+  
 }
 
 /* End of contact */

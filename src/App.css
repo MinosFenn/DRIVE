@@ -294,7 +294,7 @@ background: linear-gradient( rgba(255, 255, 255, 0) 50%, rgb(15, 15, 15) 90%);
   /* padding: 65% 2rem; */
 
   /* text-align: center; */
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
   letter-spacing: var(--mainSpacing);
 }
 .banner h1 {
@@ -397,7 +397,7 @@ height: auto;
 .section-title h4 {
   font-size: 2rem;
   letter-spacing: var(--mainSpacing);
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
   margin-bottom: 1rem;
 }
 .section-title div {
@@ -829,7 +829,7 @@ border-bottom:2px solid #000000;
 }
 .car-info {
   background: var(--mainBlack);
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
   padding: 0.5rem 0;
   text-align: center;
   font-weight: 700;
@@ -902,7 +902,7 @@ ul.details li {
   font-size: 14px;
   font-weight: 400;
   line-height: 30px;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   margin-bottom: 4px;
   display: block;
   text-align: left;
@@ -944,7 +944,7 @@ ul.details li .title {
 
 }
 .desc h3 {
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
   letter-spacing: var(--mainSpacing);
 }
 .desc p {
@@ -952,7 +952,7 @@ ul.details li .title {
 }
 .info h3,
 .info h6 {
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
   letter-spacing: var(--mainSpacing);
 }
 
@@ -968,7 +968,7 @@ ul.details li .title {
 
 }
 .car-extras h6 {
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
   letter-spacing: var(--mainSpacing);
   font-weight: 600;
   padding-bottom: 2rem;
@@ -1082,7 +1082,7 @@ margin-bottom: 0.5rem;;
   grid-column-gap: 40px;
 }
 .form-group {
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
 }
 .form-group label {
   display: block;

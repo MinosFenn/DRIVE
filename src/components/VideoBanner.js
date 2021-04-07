@@ -41,7 +41,7 @@ const VideoBanner = () => {
           <div className={classes.Divider}></div>
           <h2>Trouvez La Voiture De Vos Rêves</h2>
           <button to="/cars" className={classes.VideoButton}>
-            <Link to="/cars">Notre collection</Link>
+            <Link to="/cars">Notre stock</Link>
           </button>
         </div>
       </div>

@@ -32,7 +32,7 @@ export default class Services extends Component {
       },
       {
         icon: <FaSketch />,
-        title: "Collection",
+        title: "Dépôt/Vente",
         info:
           "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias molestias eius libero?",
       },

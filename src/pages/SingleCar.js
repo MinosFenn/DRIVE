@@ -47,13 +47,13 @@ export default class SingleCar extends Component {
       marque,
       modle,
       prix,
-      année,
+      anne,
       kilomtrage,
       boite,
       type,
       puissance,
       moteur,
-      cylindré,
+      cylindr,
       couleur,
       place,
       extras,
@@ -113,7 +113,7 @@ export default class SingleCar extends Component {
                   </li>
                   <li>
                     <span className="title">Année:</span>{" "}
-                    <span className="value">{année}</span>
+                    <span className="value">{anne}</span>
                   </li>
                   <li>
                     <span className="title">Kilométrage:</span>{" "}
@@ -129,7 +129,7 @@ export default class SingleCar extends Component {
                   </li>
                   <li>
                     <span className="title">Puissance:</span>{" "}
-                    <span className="value">{puissance}</span>
+                    <span className="value">{puissance} CH</span>
                   </li>
                   <li>
                     <span className="title">Moteur:</span>{" "}
@@ -137,7 +137,7 @@ export default class SingleCar extends Component {
                   </li>
                   <li>
                     <span className="title">Cylindrée:</span>{" "}
-                    <span className="value">{cylindré}</span>
+                    <span className="value">{cylindr}</span>
                   </li>
                   <li>
                     <span className="title">Couleur:</span>{" "}
@@ -164,9 +164,10 @@ export default class SingleCar extends Component {
             >
               <h6>Autres informations sur le véhicule:</h6>
               <ul className="extras">
-                {extras.map((item, index) => {
+                {description}
+                {/* {extras.map((item, index) => {
                   return <li key={index}>• {item}</li>;
-                })}
+                })} */}
               </ul>
             </section>
           </section>

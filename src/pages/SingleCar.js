@@ -8,6 +8,7 @@ import StyledHero from "../components/StyledHero";
 import { SRLWrapper } from "simple-react-lightbox";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 // import Car from '../components/Car'
 // import Car from '../components/Car'
 
@@ -44,6 +45,7 @@ export default class SingleCar extends Component {
     const {
       nom,
       description,
+      richdescription,
       marque,
       modle,
       prix,
@@ -60,6 +62,7 @@ export default class SingleCar extends Component {
       images,
     } = car;
     console.log(car);
+    // console.log(car.richdescription.json);
 
     const euro = new Intl.NumberFormat("fr-FR", {
       style: "currency",
@@ -163,12 +166,12 @@ export default class SingleCar extends Component {
               className="car-extras"
             >
               <h6>Autres informations sur le véhicule:</h6>
-              <ul className="extras">
-                {description}
+              <div className="extras">
+                {documentToReactComponents(richdescription)}
                 {/* {extras.map((item, index) => {
                   return <li key={index}>• {item}</li>;
                 })} */}
-              </ul>
+              </div>
             </section>
           </section>
         </SRLWrapper>

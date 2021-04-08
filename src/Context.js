@@ -32,7 +32,8 @@ class CarProvider extends Component {
     try {
       let response = await Client.getEntries({
         content_type: "cars",
-        order: "sys.createdAt",
+        // order: "sys.createdAt",
+        order: "-fields.prix",
       });
       let cars = this.formatData(response.items);
       // console.log(cars)
@@ -105,7 +106,9 @@ class CarProvider extends Component {
       cars,
       marque,
       prix,
+      richdescription,
       prixasc,
+      prixdsc,
       availableCars,
       capacity,
       minPrice,
@@ -126,12 +129,18 @@ class CarProvider extends Component {
       tempCars = tempCars.filter((car) => car.marque === marque);
     }
 
-    //filter by price
+    //filter by price bar
     tempCars = tempCars.filter((car) => car.prix <= prix);
 
-    //filter by price asc
-    if (prixasc) {
-      tempCars = tempCars.sort((car) => (car.prix < prix ? 1 : -1));
+    //filter by price dsc
+    // if (prixdsc) {
+    //   tempCars = tempCars.sort((car) => (car.prix < prix ? 1 : -1 === true));
+    // }
+
+    if (prixdsc === true) {
+      tempCars = tempCars.sort(function (a, b) {
+        return a.prix - b.prix;
+      });
     }
 
     //change state

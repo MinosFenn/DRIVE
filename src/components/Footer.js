@@ -19,13 +19,33 @@ export default class Footer extends Component {
           <div className="column-footer">
             <h2>Réseaux sociaux</h2>
             <span>
-              <FaLinkedin />
+              <a
+                href="https://www.facebook.com/DRIVE-Automobiles-102979778436253/"
+                className="social-links flame-hover"
+                target="_blank"
+              >
+                {" "}
+                <FaLinkedin LinkTo="https://www.facebook.com/DRIVE-Automobiles-102979778436253/" />
+              </a>
             </span>
             <span>
-              <FaFacebook />
+              <a
+                href="https://www.facebook.com/DRIVE-Automobiles-102979778436253/"
+                className="social-links flame-hover"
+                target="_blank"
+              >
+                <FaFacebook />
+              </a>
             </span>
             <span>
-              <FaInstagram />
+              {" "}
+              <a
+                href="https://www.instagram.com/driveautomobiles/"
+                className="social-links flame-hover"
+                target="_blank"
+              >
+                <FaInstagram />
+              </a>
             </span>
 
             <p>Suivez nous sur les réseaux !</p>

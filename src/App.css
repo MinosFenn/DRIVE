@@ -269,19 +269,26 @@ border-radius: 5px;
   justify-content: center;
   position: relative;
 }
-.carsHero {
-  background-image: url("./images/bmw-m5.jpg");
-  position: relative;
-
-  /* min-height: 60vh; */
-}
-.carsHero2 {
-  background-image: url("./images/IMG_9358.jpg");
+.carsHero1 {
+  background-image: url("./images/stock.jpg");
   position: relative;
   vertical-align: bottom;
   background-position: bottom;
   background-size: cover;
   min-height: calc(100vh - 66px);
+  display: flex;
+  background-repeat: no-repeat;
+  justify-content: center;
+
+  /* min-height: 60vh; */
+}
+.carsHero2 {
+  background-image: url("./images/Drive-front.jpg");
+  position: relative;
+  vertical-align: top;
+  background-position: top;
+  background-size: cover;
+  height: 100%;
   display: flex;
   background-repeat: no-repeat;
   justify-content: center;
@@ -530,6 +537,18 @@ position: sticky;
 /* End of nos services */
 
 /* Footer */
+.social-links {
+text-decoration: none;
+color:var(--darkGrey);
+background: rgba(255, 255, 255, 0);
+transition: ease-in-out 1s;
+
+}
+
+.flame-hover:hover {
+  -webkit-box-shadow: 4px -4px 15px 0px #FF1F1F, 12px -11px 7px 0px #FF9376, 20px -5px 7px 0px #FFE264, 20px 6px 7px 0px #F6FF33, 13px 12px 17px 0px #FF9527, 2px 17px 17px 0px #FF0000, -9px 21px 18px 0px #FFF212, -9px 6px 11px 0px #FF0808, -11px -9px 11px 0px #FFFA17, -11px -9px 11px 0px #FFFA17, 5px 5px 15px 5px rgba(0,0,0,0); 
+  box-shadow: 4px -4px 15px 0px #FF1F1F, 12px -11px 7px 0px #FF9376, 20px -5px 7px 0px #FFE264, 20px 6px 7px 0px #F6FF33, 13px 12px 17px 0px #FF9527, 2px 17px 17px 0px #FF0000, -9px 21px 18px 0px #FFF212, -9px 6px 11px 0px #FF0808, -11px -9px 11px 0px #FFFA17, -11px -9px 11px 0px #FFFA17, 5px 5px 15px 5px rgba(0,0,0,0);
+  }
 .footer {
   height: 310px;
   box-sizing: border-box;
@@ -544,7 +563,9 @@ position: sticky;
 
 }
 .contact-img-footer {
-width:150px
+width:150px;
+transition: ease-in-out 1s;
+
 }
 
 /* Create three equal columns that floats next to each other */
@@ -614,7 +635,7 @@ width:150px
   border:0px; 
 }
 .contact-layout {
-  background-image: url("./images/test4.png");
+  background-image: url("./images/IMG_9358.jpg");
 height: 100vh;
 background-position: center; /* Center the image */
 background-repeat: no-repeat; /* Do not repeat the image */

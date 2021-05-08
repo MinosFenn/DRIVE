@@ -32,14 +32,25 @@ class CarProvider extends Component {
     try {
       let response = await Client.getEntries({
         content_type: "cars",
-        // order: "sys.createdAt",
-        order: "-fields.prix",
+        order: "-sys.updatedAt",
+        // order: "-fields.prix",
       });
+
+      //  set price to croissant otherwise cars is by updated AT and sells stay n price order
       let cars = this.formatData(response.items);
+
       // console.log(cars)
-      let featuredCars = cars.filter((car) => car.featured === true);
-      let availableCars = cars.filter((car) => car.soldcars === false);
+
       let soldCars = cars.filter((car) => car.soldcars === true);
+      let featuredCars = cars.filter((car) => car.featured === true);
+      featuredCars = featuredCars.sort(function (a, b) {
+        return b.prix - a.prix;
+      });
+
+      cars = cars.sort(function (a, b) {
+        return b.prix - a.prix;
+      });
+      let availableCars = cars.filter((car) => car.soldcars === false);
       // calculate max from the data
       let maxKm = Math.max(...cars.map((item) => item.kilométrage));
       let maxPrice = Math.max(...cars.map((item) => item.prix));
@@ -104,6 +115,7 @@ class CarProvider extends Component {
   filterCars = () => {
     let {
       cars,
+      cars2,
       marque,
       prix,
       richdescription,
@@ -119,6 +131,7 @@ class CarProvider extends Component {
     } = this.state;
 
     //all cars
+
     let tempCars = cars.filter((car) => car.soldcars === false);
 
     // transform value
@@ -142,6 +155,9 @@ class CarProvider extends Component {
         return a.prix - b.prix;
       });
     }
+    // } else {
+
+    // }
 
     //change state
     this.setState({

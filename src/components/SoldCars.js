@@ -8,6 +8,7 @@ import Loading from "./Loading";
 
 export default class SoldCars extends Component {
   static contextType = CarContext;
+
   render() {
     let { loading, soldCars: cars } = this.context;
 

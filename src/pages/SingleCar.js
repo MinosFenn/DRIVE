@@ -74,6 +74,9 @@ export default class SingleCar extends Component {
       style: "unit",
       unit: "kilometer",
     });
+    // Select the first div
+    // Select div
+    console.log(car.soldcars);
     return (
       <>
         {" "}
@@ -112,7 +115,20 @@ export default class SingleCar extends Component {
                   </li>
                   <li>
                     <span className="title">Prix:</span>{" "}
-                    <span className="value">{euro.format(prix)}</span>
+                    <span
+                      className={`value ${
+                        this.props.soldcars ? "shown" : "hiddn"
+                      }`}
+                    >
+                      {" "}
+                      {car.soldcars ? (
+                        <Link to="/contact" className="btn-price">
+                          Demander le prix
+                        </Link>
+                      ) : (
+                        euro.format(prix)
+                      )}
+                    </span>
                   </li>
                   <li>
                     <span className="title">Année:</span>{" "}

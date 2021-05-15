@@ -17,7 +17,7 @@ img {
   --mainGrey: #ececec;
   --darkGrey: #e5e5e5;
   --hardGrey: 	#A9A9A9;
-  --mainTransition: all 0.3s linear;
+  --mainTransition: all 1s ease-in-out;
   --mainSpacing: 3px;
   --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
   --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
@@ -83,6 +83,22 @@ h6 {
 .white-text {
   color:var(--darkGrey)
 }
+.btn-price {float: right;
+  text-decoration: none;
+  letter-spacing: var(--mainSpacing);
+  color: var(--offWhite);
+  background: var(--primaryColor);
+  border: 3px solid var(--primaryColor);
+  transition: var(--mainTransition);
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn-price:hover {
+  background: transparent;
+  color: var(--primaryColor);
+} 
 
 .btn-primary {
   display: inline-block;
@@ -784,6 +800,11 @@ padding: auto 5%;
 /* end of featured cars */
 
 /* car */
+
+.hidden {
+  display: none;
+}
+
 .car {
   /* box-shadow: var(--lightShadow); */
   transition: box-shadow 2s ease-in-out;
@@ -955,7 +976,7 @@ ul.details li {
   font-weight: 400;
   line-height: 30px;
   /* text-transform: uppercase; */
-  margin-bottom: 4px;
+  margin-bottom: 6px;
   display: block;
   text-align: left;
 }

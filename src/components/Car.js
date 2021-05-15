@@ -4,8 +4,11 @@ import defaultImg from "../images/test1.jpg";
 import PropTypes from "prop-types";
 import Aos from "aos";
 import "aos/dist/aos.css";
+
 export default function Car({ car }) {
-  // console.log(car)
+  // console.log(this.props)
+
+  console.log(car);
   const { nom, slug, images, prix, kilomtrage, soldcars } = car;
   useEffect(() => {
     Aos.init({ duration: 3000 });
@@ -35,8 +38,11 @@ export default function Car({ car }) {
             <h6>{km.format(kilomtrage)}</h6>
           </div>
 
-          <div className="info-bottom">
-            <h6> {euro.format(prix)}</h6>
+          <div
+            // className="info-bottom"
+            className={`info-bottom ${car.soldcars ? "hidden" : "shown"}`}
+          >
+            <h6> {car.soldcars ? "Demander le prix" : euro.format(prix)}</h6>
           </div>
 
           <Link to={`/cars/${slug}`} className="btn-primary car-link ">

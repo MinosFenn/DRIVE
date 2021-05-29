@@ -1,6 +1,7 @@
 import React from "react";
 import Hero from "../components/Hero";
 import Banner from "../components/Banner";
+import historique from "../images/historique.png";
 
 function About() {
   return (
@@ -14,7 +15,7 @@ function About() {
         </Hero>
       </div>
       <div className="item2">
-        <h2>DRIVE AUTOMOBILES</h2>
+        <img src={historique} alt="" className="Historique" />
         <p className="white-text">
           DRIVE Automobiles est l’aboutissement d’un jeune passionné de 24 ans.
           C’est aussi la revanche d’un petit garçon qui a toujours rêvé
@@ -38,7 +39,7 @@ function About() {
           Automobiles.<br></br>
           <br></br> Le projet est de construire petit à petit un temple de la
           passion. Un endroit où on va chercher des conseils, visiter une
-          occasion intéressante, discuter de projet automobiles, ou encore
+          occasion intéressante, discuter de projets automobiles, ou encore
           repartir le sourire aux lèvres à bord d’une belle voiture.
           <br></br>
           <br></br>La philosophie du garage se veut très ouverte, et en aucun

@@ -11,7 +11,7 @@ const Sold = () => {
           {" "}
           <Banner
             title="Vendu"
-            subtitle="Un modèle vous plaît ? passez commande !"
+            subtitle="Un modèle vous plaît ? Passez commande !"
           ></Banner>
         </Hero>
       </div>

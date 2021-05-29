@@ -19,10 +19,10 @@ export default function Contact() {
             <img src={logo} alt="" className="contact-img" />
 
             <a
-              href="mailto:contact@drive-automobiles.fr"
+              href="mailto:matteo@drive-automobiles.fr"
               className="btn-contact"
             >
-              contact@drive-automobiles.fr
+              matteo@drive-automobiles.fr
             </a>
             <a href="tel:0750414930" className="btn-contact">
               07 50 41 49 30

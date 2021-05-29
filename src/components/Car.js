@@ -9,7 +9,7 @@ export default function Car({ car }) {
   // console.log(this.props)
 
   console.log(car);
-  const { nom, slug, images, prix, kilomtrage, soldcars } = car;
+  const { marque, modle, slug, images, prix, kilomtrage, soldcars } = car;
   useEffect(() => {
     Aos.init({ duration: 3000 });
   }, []);
@@ -50,7 +50,9 @@ export default function Car({ car }) {
           </Link>
         </div>
         <div className="name-top">
-          <h6>{nom}</h6>
+          <h6>
+            {marque} - {modle}
+          </h6>
         </div>
       </div>
       {/* <p className="room-info"></p> */}

@@ -81,10 +81,20 @@ export default class SingleCar extends Component {
       <>
         {" "}
         <SRLWrapper>
-          <section className="title-single-car">
-            <Link data-aos="fade-right" to="/cars" className="btn-primary">
-              revenir à la liste de voitures
-            </Link>
+          <section data-aos="fade-right" className="title-single-car">
+            {car.soldcars ? (
+              <Link
+                // data-aos="fade-left"
+                to="/sold"
+                className="btn-primary"
+              >
+                revenir à la liste de voitures
+              </Link>
+            ) : (
+              <Link to="/cars" className="btn-primary">
+                revenir à la liste de voitures
+              </Link>
+            )}
           </section>
 
           <section data-aos="zoom-in-down" className="single-car">
@@ -114,15 +124,26 @@ export default class SingleCar extends Component {
                     <span className="value">{modle}</span>
                   </li>
                   <li>
-                    <span className="title">Prix:</span>{" "}
                     <span
                       className={`value ${
-                        this.props.soldcars ? "shown" : "hiddn"
+                        this.props.soldcars ? "shown" : "hidden"
+                      }`}
+                    >
+                      Prix:
+                    </span>{" "}
+                    <span
+                      data-aos="fade-left"
+                      className={`value ${
+                        this.props.soldcars ? "shown" : "hidden"
                       }`}
                     >
                       {" "}
                       {car.soldcars ? (
-                        <Link to="/contact" className="btn-price">
+                        <Link
+                          // data-aos="fade-left"
+                          to="/contact"
+                          className="btn-price"
+                        >
                           Demander le prix
                         </Link>
                       ) : (
@@ -171,7 +192,7 @@ export default class SingleCar extends Component {
                 </ul>{" "}
               </article>
             </div>
-            <section className="cta">
+            <section data-aos="fade-right" className="cta">
               <Link to="/contact" className="btn-cta">
                 Nous contacter à propos de ce véhicule
               </Link>

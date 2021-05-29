@@ -20,7 +20,7 @@ export default class SoldCars extends Component {
 
     return (
       <section className="featured-cars">
-        <Title title="Elles ont prises la route" />
+        <Title title="Elles ont prise la route" />
         <div className="featured-cars-center">
           {loading ? <Loading /> : cars}
         </div>{" "}

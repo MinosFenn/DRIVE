@@ -15,26 +15,22 @@ export default class Services extends Component {
       {
         icon: <FaAngleDoubleDown />,
         title: "Achat",
-        info:
-          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias molestias eius libero?",
+        info: "Voitures de sport ? Voitures rares ? Nous sommes intéressés !",
       },
       {
         icon: <FaAngleDoubleUp />,
         title: "Vente",
-        info:
-          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias molestias eius libero?",
+        info: "Nous proposons à la vente des véhicules d’exceptions, de toutes époques, modernes ou anciennes et pour tout budget.",
       },
       {
         icon: <FaSistrix />,
         title: "Commande",
-        info:
-          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias molestias eius libero?",
+        info: "Nous effectuons des recherches personnalisées afin de trouver votre véhicule rêvé tout en respectant votre budget et vos goûts. ",
       },
       {
         icon: <FaSketch />,
         title: "Dépôt/Vente",
-        info:
-          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias molestias eius libero?",
+        info: "Nous nous chargeons de la vente de votre sportive, en la mettant en valeur afin d’en tirer le meilleur prix. Et ça, c’est gratuit !",
       },
     ],
   };
@@ -49,7 +45,7 @@ export default class Services extends Component {
   render() {
     return (
       <section className="services">
-        <Title title="services" />
+        <Title title="Services" />
         <div className="services-center">
           {this.state.services.map((item) => {
             return (

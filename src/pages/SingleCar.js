@@ -123,34 +123,26 @@ export default class SingleCar extends Component {
                     <span className="title">Modèle:</span>{" "}
                     <span className="value">{modle}</span>
                   </li>
-                  <li>
-                    <span
-                      className={`value ${
-                        this.props.soldcars ? "shown" : "hidden"
-                      }`}
-                    >
-                      Prix:
-                    </span>{" "}
-                    <span
-                      data-aos="fade-left"
-                      className={`value ${
-                        this.props.soldcars ? "shown" : "hidden"
-                      }`}
-                    >
-                      {" "}
-                      {car.soldcars ? (
-                        <Link
-                          // data-aos="fade-left"
-                          to="/contact"
-                          className="btn-price"
-                        >
-                          Demander le prix
-                        </Link>
-                      ) : (
-                        euro.format(prix)
-                      )}
-                    </span>
-                  </li>
+                  <div className={`${car.soldcars ? "hidden" : "shown"}`}>
+                    <li>
+                      <span
+                        className={`title ${
+                          this.props.soldcars ? "hidden" : "shown"
+                        }`}
+                      >
+                        Prix:
+                      </span>{" "}
+                      <span
+                        data-aos="fade-left"
+                        className={`value ${
+                          this.props.soldcars ? "hidden" : "shown"
+                        }`}
+                      >
+                        {" "}
+                        {car.soldcars ? "sur demande" : euro.format(prix)}
+                      </span>
+                    </li>
+                  </div>
                   <li>
                     <span className="title">Année:</span>{" "}
                     <span className="value">{anne}</span>

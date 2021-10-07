@@ -98,9 +98,7 @@ export default class SingleCar extends Component {
           </section>
 
           <section data-aos="zoom-in-down" className="single-car">
-            <h2>
-              {nom} {type}
-            </h2>
+            <h2>{nom}</h2>
 
             <div data-aos="fade-up" className="single-car-info">
               <article className="desc">

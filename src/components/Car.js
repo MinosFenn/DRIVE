@@ -1,26 +1,25 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import defaultImg from "../images/test1.jpg";
-import PropTypes from "prop-types";
-import Aos from "aos";
-import "aos/dist/aos.css";
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import defaultImg from '../images/test1.jpg';
+import PropTypes from 'prop-types';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 export default function Car({ car }) {
   // console.log(this.props)
 
-  console.log(car);
   const { marque, modle, slug, images, prix, kilomtrage, soldcars } = car;
   useEffect(() => {
     Aos.init({ duration: 3000 });
   }, []);
-  const euro = new Intl.NumberFormat("fr-FR", {
-    style: "currency",
-    currency: "EUR",
+  const euro = new Intl.NumberFormat('fr-FR', {
+    style: 'currency',
+    currency: 'EUR',
     minimumFractionDigits: 2,
   });
-  const km = new Intl.NumberFormat("fr-FR", {
-    style: "unit",
-    unit: "kilometer",
+  const km = new Intl.NumberFormat('fr-FR', {
+    style: 'unit',
+    unit: 'kilometer',
   });
   return (
     <article className="car">
@@ -40,9 +39,9 @@ export default function Car({ car }) {
 
           <div
             // className="info-bottom"
-            className={`info-bottom ${car.soldcars ? "hidden" : "shown"}`}
+            className={`info-bottom ${car.soldcars ? 'hidden' : 'shown'}`}
           >
-            <h6> {car.soldcars ? "Demander le prix" : euro.format(prix)}</h6>
+            <h6> {car.soldcars ? 'Demander le prix' : euro.format(prix)}</h6>
           </div>
 
           <Link to={`/cars/${slug}`} className="btn-primary car-link ">

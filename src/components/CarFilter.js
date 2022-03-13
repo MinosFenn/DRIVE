@@ -1,7 +1,7 @@
-import React from "react";
-import { useContext } from "react";
-import { CarContext } from "../Context";
-import Title from "../components/Title";
+import React from 'react';
+import { useContext } from 'react';
+import { CarContext } from '../Context';
+import Title from '../components/Title';
 //get all unique values
 const getUnique = (items, value) => {
   return [...new Set(items.map((item) => item[value]))];
@@ -23,9 +23,9 @@ export default function CarFilter({ cars }) {
   } = context;
 
   // get unique types
-  let marques = getUnique(cars, "marque");
+  let marques = getUnique(cars, 'marque');
   //all
-  marques = ["Toutes marques", ...marques];
+  marques = ['Toutes marques', ...marques];
   //map to jsx
   marques = marques.map((item, index) => {
     return (

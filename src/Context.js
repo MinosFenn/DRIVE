@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-// import items from "./data";
-import Client from "./Contentful";
+import React, { Component } from 'react';
+import items from './data';
+import Client from './Contentful';
 
 Client.getEntries({
-  content_type: "cars",
+  content_type: 'cars',
 }).then((response) => console.log(response.items));
 
 const CarContext = React.createContext();
@@ -16,8 +16,8 @@ class CarProvider extends Component {
     featuredCars: [],
     soldCars: [],
     loading: true,
-    type: "Tous",
-    marque: "Toutes marques",
+    type: 'Tous',
+    marque: 'Toutes marques',
     capacity: 1,
     prix: 0,
     minPrice: 0,
@@ -31,15 +31,13 @@ class CarProvider extends Component {
   getData = async () => {
     try {
       let response = await Client.getEntries({
-        content_type: "cars",
-        order: "-sys.updatedAt",
+        content_type: 'cars',
+        order: '-sys.updatedAt',
         // order: "-fields.prix",
       });
 
       //  set price to croissant otherwise cars is by updated AT and sells stay n price order
       let cars = this.formatData(response.items);
-
-      // console.log(cars)
 
       let soldCars = cars.filter((car) => car.soldcars === true);
       let featuredCars = cars.filter((car) => car.featured === true);
@@ -52,8 +50,8 @@ class CarProvider extends Component {
       });
       let availableCars = cars.filter((car) => car.soldcars === false);
       // calculate max from the data
-      let maxKm = Math.max(...cars.map((item) => item.kilométrage));
-      let maxPrice = Math.max(...cars.map((item) => item.prix));
+      let maxKm = Math.max(...availableCars.map((car) => car.kilométrage));
+      let maxPrice = Math.max(...availableCars.map((car) => car.prix));
 
       this.setState({
         cars,
@@ -101,9 +99,9 @@ class CarProvider extends Component {
   //   calculate the change in value to reorganise page according to search
   handleChange = (event) => {
     const target = event.target;
-    const value = target.type === "checkbox" ? target.checked : target.value;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
-    console.log(name, value, target.type);
+    // console.log(name, value, target.type);
 
     this.setState(
       {
@@ -131,14 +129,12 @@ class CarProvider extends Component {
     } = this.state;
 
     //all cars
-
     let tempCars = cars.filter((car) => car.soldcars === false);
-
     // transform value
     prix = parseInt(prix);
 
     //filter par marque
-    if (marque !== "Toutes marques") {
+    if (marque !== 'Toutes marques') {
       tempCars = tempCars.filter((car) => car.marque === marque);
     }
 
@@ -173,6 +169,7 @@ class CarProvider extends Component {
           handleChange: this.handleChange,
         }}
       >
+        {' '}
         {this.props.children}
       </CarContext.Provider>
     );

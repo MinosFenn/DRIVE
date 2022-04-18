@@ -71,7 +71,7 @@ export default function CarFilter({ cars }) {
 
         <div className="form-group">
           <label htmlFor="prixdsc" id="testprixdsc" value="prix">
-            Prix Déroissant
+            Prix Décroissant
           </label>
           <input
             type="checkbox"

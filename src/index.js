@@ -1,24 +1,26 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter as Router } from "react-router-dom";
-import "./index.css";
-import App from "./App";
-import reportWebVitals from "./reportWebVitals";
-import ScrollToTop from "./components/ScrollToTop";
-import { CarProvider } from "./Context";
-import { IntlProvider } from "react-intl";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+import ScrollToTop from './components/ScrollToTop';
+import { CarProvider, EventProvider } from './Context';
+import { IntlProvider } from 'react-intl';
 
 ReactDOM.render(
   <IntlProvider locale="fr-FR">
-    <CarProvider>
-      <Router>
-        <ScrollToTop />
-        <App />
-      </Router>
-    </CarProvider>
+    <EventProvider>
+      <CarProvider>
+        <Router>
+          <ScrollToTop />
+          <App />
+        </Router>
+      </CarProvider>
+    </EventProvider>
   </IntlProvider>,
 
-  document.getElementById("root")
+  document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function

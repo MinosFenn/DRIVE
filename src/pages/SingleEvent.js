@@ -89,7 +89,7 @@ export default class SingleEvent extends Component {
             <article className="img-block">
               <iframe
                 className="event-image"
-                src="https://www.google.com/maps/embed/v1/MAP_MODE?key=AIzaSyDUor6NqKUWU1kuJND-ciK_EfDA9NYirbE&query=47.5951518%2C-122.3316393"
+                src="https://www.google.com/maps/embed/v1/view?key=AIzaSyDUor6NqKUWU1kuJND-ciK_EfDA9NYirbE&center=-33.8569,151.2152&zoom=18&maptype=satellite"
               ></iframe>
             </article>
           </div>

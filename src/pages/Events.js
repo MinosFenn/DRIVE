@@ -1,14 +1,24 @@
-import React from 'react'
-import Hero from '../components/Hero'
-import Banner from '../components/Banner'
-function Events() {
-    return (
-        <Hero hero="carsHero">
-        <Banner title="événements" subtitle="Retrouvez tous nos événements">
+import React from 'react';
+import Hero from '../components/Hero';
+import Banner from '../components/Banner';
+import EventsContainer from '../components/EventContainer';
 
-        </Banner>
-</Hero>    
-)
-}
+const Events = () => {
+  return (
+    <>
+      <div className="container">
+        <Hero hero="carsHero1">
+          {' '}
+          <Banner
+            title="Events"
+            subtitle="Retrouvez tous nos événements"
+          ></Banner>
+        </Hero>
+      </div>
 
-export default Events
+      <EventsContainer />
+    </>
+  );
+};
+
+export default Events;

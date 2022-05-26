@@ -1,24 +1,24 @@
 // import logo from './logo.svg';
-import React, { useEffect } from "react";
-import "./App.css";
-import Home from "./pages/Home";
-import Cars from "./pages/Cars";
-import Sold from "./pages/Sold";
-import SingleCar from "./pages/SingleCar";
-import Events from "./pages/Events";
-import SingleEvent from "./pages/SingleEvent";
-import Error from "./pages/Error";
-import Services from "./pages/Services";
-import ContactForm from "./pages/Contact";
-import About from "./pages/About";
-import { Route, Switch } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import ScrollToTop from "./components/ScrollToTop";
-import SimpleReactLightbox from "simple-react-lightbox";
-import Aos from "aos";
-import "aos/dist/aos.css";
-import Footer from "./components/Footer";
-import MessengerCustomerChat from "react-messenger-customer-chat";
+import React, { useEffect } from 'react';
+import './App.css';
+import Home from './pages/Home';
+import Cars from './pages/Cars';
+import Sold from './pages/Sold';
+import SingleCar from './pages/SingleCar';
+import Events from './pages/Events';
+import SingleEvent from './pages/SingleEvent';
+import Error from './pages/Error';
+import Services from './pages/Services';
+import ContactForm from './pages/Contact';
+import About from './pages/About';
+import { Route, Switch } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import ScrollToTop from './components/ScrollToTop';
+import SimpleReactLightbox from 'simple-react-lightbox';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
+import Footer from './components/Footer';
+import MessengerCustomerChat from 'react-messenger-customer-chat';
 
 function App() {
   return (
@@ -37,7 +37,8 @@ function App() {
           {/* <Route exact path="/Events" component={Events} />
   <Route exact path="/Events/:slug" component={SingleEvent} /> */}
           <Route exact path="/Sold" component={Sold} />
-
+          <Route exact path="/Events" component={Events} />
+          <Route exact path="/Events/:slug" component={SingleEvent} />
           <Route exact path="/About" component={About} />
           <Route exact path="/Services" component={Services} />
           <Route exact path="/Contact" component={ContactForm} />

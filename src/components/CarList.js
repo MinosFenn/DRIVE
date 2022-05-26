@@ -1,9 +1,11 @@
-import React from "react";
-import Car from "./Car";
-import { CarContext } from "../Context";
+import React from 'react';
+import Car from './Car';
+import { CarContext } from '../Context';
 
 export default function CarList({ cars }) {
   if (cars.length === 0) {
+    console.log(cars);
+
     return (
       <div className="empty-search">
         <h3>

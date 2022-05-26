@@ -6,8 +6,93 @@ Client.getEntries({
   content_type: 'cars',
 }).then((response) => console.log(response.items));
 
+Client.getEntries({
+  content_type: 'events',
+}).then((response) => console.log(response.items));
 const CarContext = React.createContext();
+const EventContext = React.createContext();
 
+class EventProvider extends Component {
+  state = {
+    events: [],
+    sortedEvents: [],
+    loading: true,
+  };
+  getData = async () => {
+    try {
+      let response = await Client.getEntries({
+        content_type: 'events',
+        order: '-sys.updatedAt',
+      });
+
+      //  set price to croissant otherwise cars is by updated AT and sells stay n price order
+      let events = this.formatData(response.items);
+
+      this.setState({
+        events,
+        loading: false,
+      });
+      //nothing to add
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  // store and pass data
+  componentDidMount() {
+    this.getData();
+    console.log(this.getData());
+  }
+  formatData(items) {
+    let tempItems = items.map((item) => {
+      let id = item.sys.id;
+      let image = item.fields.image.fields.file.url;
+      let event = { ...item.fields, image, id };
+      return event;
+    });
+    return tempItems;
+  }
+
+  // create slug according to event
+  getEvent = (slug) => {
+    let tempEvents = [...this.state.events];
+    const event = tempEvents.find((event) => event.slug === slug);
+    return event;
+  };
+
+  // handleChange = (event) => {
+  // const type = event.target.type;
+  // const name = event.target.name;
+  // const value = event.target.value
+
+  // console.log(type, name, value);
+  // }
+  //   calculate the change in value to reorganise page according to search
+  filterEvents = () => {
+    let { events } = this.state;
+
+    let tempEvents = events;
+
+    this.setState({
+      sortedEvents: tempEvents,
+    });
+  };
+  render() {
+    return (
+      <EventContext.Provider
+        value={{
+          ...this.state,
+          getEvent: this.getEvent,
+          getEvent: this.getEvent,
+
+          handleChange: this.handleChange,
+        }}
+      >
+        {' '}
+        {this.props.children}
+      </EventContext.Provider>
+    );
+  }
+}
 // <CarContext.Provider value={'hello}
 class CarProvider extends Component {
   state = {
@@ -69,8 +154,7 @@ class CarProvider extends Component {
       console.log(error);
     }
   };
-  // show card on homepage if featured is true
-  // TODO:a revoir
+  // store and pass data
   componentDidMount() {
     this.getData();
   }
@@ -83,12 +167,14 @@ class CarProvider extends Component {
     });
     return tempItems;
   }
+
   // create slug according to car
   getCar = (slug) => {
     let tempCars = [...this.state.cars];
     const car = tempCars.find((car) => car.slug === slug);
     return car;
   };
+
   // handleChange = (event) => {
   // const type = event.target.type;
   // const name = event.target.name;
@@ -166,6 +252,8 @@ class CarProvider extends Component {
         value={{
           ...this.state,
           getCar: this.getCar,
+          getCar: this.getCar,
+
           handleChange: this.handleChange,
         }}
       >
@@ -175,8 +263,10 @@ class CarProvider extends Component {
     );
   }
 }
+const EventConsumer = EventContext.Consumer;
 
 const CarConsumer = CarContext.Consumer;
+
 // Carcontainer
 export function withCarConsumer(Component) {
   return function ConsumerWrapper(props) {
@@ -187,4 +277,22 @@ export function withCarConsumer(Component) {
     );
   };
 }
-export { CarProvider, CarConsumer, CarContext };
+
+export function withEventConsumer(Component) {
+  return function ConsumerWrapper(props) {
+    return (
+      <EventConsumer>
+        {(value) => <Component {...props} context={value} />}
+      </EventConsumer>
+    );
+  };
+}
+
+export {
+  CarProvider,
+  CarConsumer,
+  CarContext,
+  EventProvider,
+  EventConsumer,
+  EventContext,
+};

@@ -70,7 +70,7 @@ export default class Navbar extends Component {
             <li>
               <Link to="/events" onClick={this.closeMobileMenu}>
                 {" "}
-                Événements{" "}
+                Évènements{" "}
               </Link>
             </li>
             {/* 

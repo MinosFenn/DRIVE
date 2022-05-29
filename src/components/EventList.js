@@ -9,7 +9,7 @@ export default function EventList({ events }) {
     return (
       <div className="empty-search">
         <h3>
-          Il n'y a malheureusement pas d'événements correspondant à cette
+          Il n'y a malheureusement pas d'évènements correspondant à cette
           recherche
         </h3>
       </div>

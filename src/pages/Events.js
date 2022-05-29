@@ -11,7 +11,7 @@ const Events = () => {
           {' '}
           <Banner
             title="Events"
-            subtitle="Retrouvez tous nos événements"
+            subtitle="Retrouvez tous nos évènements"
           ></Banner>
         </Hero>
       </div>

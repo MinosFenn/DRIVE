@@ -28,16 +28,15 @@ export default class SingleEvent extends Component {
   // componentDidMount(){}
 
   render() {
-    const gmap = process.env.REACT_APP_API_SPACE
     const { getEvent } = this.context;
     const event = getEvent(this.state.slug);
     console.log(event);
     if (!event) {
       return (
         <div className="error">
-          <h3>Nous n'avons pas trouvé cet événement...</h3>
+          <h3>Nous n'avons pas trouvé cet évènement...</h3>
           <Link to="/events" className="btn-primary">
-            retourner aux événements disponibles
+            retourner aux évènements disponibles
           </Link>
         </div>
       );
@@ -51,7 +50,7 @@ export default class SingleEvent extends Component {
         {' '}
         <section data-aos="fade-right" className="title-single-car">
           <Link to="/events" className="btn-primary">
-            revenir à la liste d'événements
+            revenir à la liste d'évènements
           </Link>
         </section>
         <section data-aos="zoom-in-down" className="single-car">
@@ -83,15 +82,15 @@ export default class SingleEvent extends Component {
           </section>
           <section data-aos="fade-right" className="cta">
             <Link to="/contact" className="btn-cta">
-              Nous contacter à propos de cet événement
+              Nous contacter à propos de cet évènement
             </Link>
           </section>
           <div data-aos="fade-up" className="single-event-info">
             <article className="img-block">
               <iframe
                 className="event-image"
-                height="400px"
-                src={`https://www.google.com/maps/embed/v1/view?key=${gmap}&center=${location.lat},${location.lon}&zoom=18&maptype=satellite`}
+                height="600px"
+                src={`https://www.google.com/maps/embed/v1/view?key=AIzaSyDUor6NqKUWU1kuJND-ciK_EfDA9NYirbE&center=${location.lat},${location.lon}&zoom=18&maptype=roadmap`}
               ></iframe>
             </article>
           </div>

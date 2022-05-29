@@ -67,6 +67,12 @@ export default class Navbar extends Component {
                 Vendu{" "}
               </Link>
             </li>
+            <li>
+              <Link to="/events" onClick={this.closeMobileMenu}>
+                {" "}
+                Événements{" "}
+              </Link>
+            </li>
             {/* 
               <li>
                 <Link to="/events"> Evenements </Link>

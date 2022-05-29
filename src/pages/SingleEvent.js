@@ -28,6 +28,7 @@ export default class SingleEvent extends Component {
   // componentDidMount(){}
 
   render() {
+    const gmap = process.env.REACT_APP_API_SPACE
     const { getEvent } = this.context;
     const event = getEvent(this.state.slug);
     console.log(event);
@@ -89,7 +90,8 @@ export default class SingleEvent extends Component {
             <article className="img-block">
               <iframe
                 className="event-image"
-                src={`https://www.google.com/maps/embed/v1/view?key=AIzaSyDUor6NqKUWU1kuJND-ciK_EfDA9NYirbE&center=${location.lat},${location.lon}&zoom=18&maptype=satellite`}
+                height="400px"
+                src={`https://www.google.com/maps/embed/v1/view?key=${gmap}&center=${location.lat},${location.lon}&zoom=18&maptype=satellite`}
               ></iframe>
             </article>
           </div>

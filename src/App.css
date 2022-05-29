@@ -1123,6 +1123,43 @@ ul.details li .title {
   } */
 }
 /* end of single car*/
+/* eventslist */
+
+/* carlist */
+.eventslist {
+  padding: 5rem 0;
+}
+
+@media screen and (min-width: 860px) {
+  .eventslist-center {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  }
+
+  .eventslist-center .car-link {
+    top: 35%;
+  }
+}
+
+.eventslist-center {
+  width: 80vw;
+  margin: 0 auto;
+  /* display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-row-gap: 2rem; */
+  grid-column-gap: 30px;
+}
+
+@media screen and (min-width: 776px) {
+  .eventslist-center {
+    width: 90vw;
+  }
+}
+@media screen and (min-width: 992px) {
+  .eventslist-center {
+    width: 95vw;
+    max-width: 1170px;
+  }
+}
 /* carlist */
 .carslist {
   padding: 5rem 0;

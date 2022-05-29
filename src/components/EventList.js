@@ -16,8 +16,8 @@ export default function EventList({ events }) {
     );
   }
   return (
-    <section className="carslist">
-      <div className="carslist-center">
+    <section className="eventslist">
+      <div className="eventslist-center">
         {events.map((item) => {
           return <Event key={item.id} event={item} />;
         })}

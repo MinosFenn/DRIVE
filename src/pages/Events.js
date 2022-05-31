@@ -7,7 +7,7 @@ const Events = () => {
   return (
     <>
       <div className="container">
-        <Hero hero="carsHero1">
+        <Hero hero="carsHeroEvent">
           {' '}
           <Banner
             title="Events"

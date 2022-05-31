@@ -304,6 +304,21 @@ h6 {
 
   /* min-height: 60vh; */
 }
+
+.carsHeroEvent {
+  background-image: url('./images/event.png');
+  position: relative;
+  vertical-align: bottom;
+  background-position: bottom;
+  background-size: cover;
+  min-height: calc(100vh - 66px);
+  display: flex;
+  background-repeat: no-repeat;
+  justify-content: center;
+
+  /* min-height: 60vh; */
+}
+
 .carsHero2 {
   background-image: url('./images/Drive-front.jpg');
   position: relative;

@@ -47,6 +47,9 @@ export default class SingleCar extends Component {
       description,
       richdescription,
       marque,
+      tlphoneVendeur,
+      emailVendeur,
+      nomVendeur,
       modle,
       prix,
       anne,
@@ -58,6 +61,7 @@ export default class SingleCar extends Component {
       cylindr,
       couleur,
       place,
+      vendeur,
       extras,
       images,
     } = car;
@@ -182,11 +186,21 @@ export default class SingleCar extends Component {
                 </ul>{' '}
               </article>
             </div>
-            <section data-aos="fade-right" className="cta">
-              <Link to="/contact" className="btn-cta">
-                Nous contacter à propos de ce véhicule
-              </Link>
+            <div data-aos="fade-up" className="single-car-info">
+              <div className="desc">
+                <img src={vendeur.fields.file.url} alt="" className="image-vendeur" />
+              </div>
+              <div className="info">
+              <section data-aos="fade-right" className="cta">
+              <span className="VendeurName">{nomVendeur}</span>
+              <a href='tel:${tlphoneVendeur}' className="VendeurTel">{tlphoneVendeur}</a>
+              <a to="mailto:${emailVendeur}" className="btn-cta">
+                Contacter: {emailVendeur}
+              </a>
             </section>
+              </div>
+            </div>
+           
             <section
               data-aos="fade-down"
               data-aos-duration="4000"

@@ -18,6 +18,7 @@ export default class SingleCar extends Component {
     console.log(this.props);
     this.state = {
       slug: this.props.match.params.slug,
+      defaultImg,
     };
     console.log(defaultImg)
   }
@@ -30,7 +31,7 @@ export default class SingleCar extends Component {
 
   render() {
     const emaildft = "matteo@drive-automobiles.fr";
-    const teldft = "07 68 95 08 07";
+    const teldft = "07 50 41 49 30";
     const namedft = "Matteo Bernard";
     const { getCar } = this.context;
     const car = getCar(this.state.slug);
@@ -191,7 +192,7 @@ export default class SingleCar extends Component {
             </div>
             <div data-aos="fade-up" className="single-car-info single-car-info-block2">
               <div data-aos="fade-left" className="desc center-content">
-                {/* <img src={vendeur.fields.file.url}  alt="" className="image-vendeur" /> */}
+                {/* <img src={vendeur.fields.file.url}   alt="" className="image-vendeur" /> */}
                 <h3 className="VendeurName">{nomVendeur || namedft}</h3>
                 <h4>Téléphone: <a href={`tel:${tlphoneVendeur || teldft}`} className="VendeurTel">{tlphoneVendeur || teldft}</a></h4>
 

@@ -58,7 +58,7 @@ export default class Footer extends Component {
             </p>
             <br></br>
             <p>
-              <b>SAM</b>: 09:00 - 19:00
+              <b>SAM</b>: 10:00 - 18:00
             </p>
             <br></br>
             <p>

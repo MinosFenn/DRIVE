@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import defaultImg from '../images/test1.jpg';
 import PropTypes from 'prop-types';
+import defaultImg from '../images/contact.jpg';
+
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 

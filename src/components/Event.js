@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import defaultImg from '../images/test1.jpg';
+import defaultImg from '../images/contact.jpg';
 import PropTypes from 'prop-types';
 import Aos from 'aos';
+import {IntlProvider, FormattedMessage, FormattedNumber} from 'react-intl'
+
 import 'aos/dist/aos.css';
 
 export default function Event({ event }) {
@@ -12,11 +14,7 @@ export default function Event({ event }) {
   useEffect(() => {
     Aos.init({ duration: 3000 });
   }, []);
-  // const euro = new Intl.NumberFormat('fr-FR', {
-  //   style: 'currency',
-  //   currency: 'EUR',
-  //   minimumFractionDigits: 2,
-  // });
+  var date = new Date(dates);
   // const km = new Intl.NumberFormat('fr-FR', {
   //   style: 'unit',
   //   unit: 'kilometer',
@@ -29,8 +27,10 @@ export default function Event({ event }) {
           {/* <div className="name-top">
             <h6>{nom}</h6>
           </div> */}
-          <div className="info-bottom">
-            <h6>{dates}</h6>
+          <div className="info-bottom center-content">
+
+            <h6>{date.toLocaleString('fr-FR', { timeZone: 'GMT' })}
+</h6>
           </div>
 
           <Link to={`/events/${slug}`} className="btn-primary car-link ">

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import defaultBcg from '../images/test1.jpg';
+import defaultBcg from '../images/contact.jpg';
 import Hero from '../components/Hero';
 import Banner from '../components/Banner';
 import { Link } from 'react-router-dom';
@@ -84,7 +84,6 @@ export default class SingleCar extends Component {
     return (
       <>
         {' '}
-        <SRLWrapper>
           <section data-aos="fade-right" className="title-single-car">
             {car.soldcars ? (
               <Link
@@ -105,7 +104,8 @@ export default class SingleCar extends Component {
             <h2>{nom}</h2>
 
             <div data-aos="fade-up" className="single-car-info">
-              <article className="desc">
+            <SRLWrapper>
+            <article className="desc">
                 <img src={images[0]} alt="" className="big-image" />
                 <div className="single-car-images">
                   {images.map((item, index) => {
@@ -113,6 +113,7 @@ export default class SingleCar extends Component {
                   })}
                 </div>{' '}
               </article>
+              </SRLWrapper>
               <article className="info">
                 <h3>Informations</h3>
                 <ul className="details">
@@ -186,17 +187,23 @@ export default class SingleCar extends Component {
                 </ul>{' '}
               </article>
             </div>
-            <div data-aos="fade-up" className="single-car-info">
-              <div className="desc">
+            <div data-aos="fade-up" className="single-car-info single-car-info-block2">
+              <div data-aos="fade-left" className="desc center-content">
                 <img src={vendeur.fields.file.url} alt="" className="image-vendeur" />
-              </div>
+                <h3 className="VendeurName">{nomVendeur}</h3>
+                <h4>Téléphone: <a href={`tel:${tlphoneVendeur}`} className="VendeurTel">{tlphoneVendeur}</a></h4>
+
+</div>
               <div className="info">
               <section data-aos="fade-right" className="cta">
-              <span className="VendeurName">{nomVendeur}</span>
-              <a href='tel:${tlphoneVendeur}' className="VendeurTel">{tlphoneVendeur}</a>
-              <a to="mailto:${emailVendeur}" className="btn-cta">
-                Contacter: {emailVendeur}
+              <h3>Nous contacter à propos de ce véhicule:</h3>
+
+              <a href={`mailto:${emailVendeur}?subject=${nom}`} className="btn-cta">
+
+                {emailVendeur}
               </a>
+
+
             </section>
               </div>
             </div>
@@ -215,7 +222,6 @@ export default class SingleCar extends Component {
               </div>
             </section>
           </section>
-        </SRLWrapper>
       </>
     );
   }

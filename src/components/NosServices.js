@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Achat from "../images/test4.png"
 export default class NosServices extends Component {
     render() {
         return (

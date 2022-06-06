@@ -25,17 +25,22 @@ img {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 20px;
+  width: 1rem;
+  border-radius: 5x;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
   background: var(--mainWhite);
+  border-radius: 5px;
+
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: var(--mainBlack);
+  border-radius: 5px;
+
 }
 
 /* Handle on hover */
@@ -285,14 +290,14 @@ h6 {
 .defaultHero,
 .carsHero {
   min-height: calc(100vh - 66px);
-  background: url('./images/IMG_9358.jpg') center/cover no-repeat;
+  background: url('./images/contact.jpg') center/cover no-repeat;
   display: flex;
   align-items: top;
   justify-content: center;
   position: relative;
 }
 .carsHero1 {
-  background-image: url('./images/stock.jpg');
+  background-image: url('./images/stock.png');
   position: relative;
   vertical-align: bottom;
   background-position: bottom;
@@ -547,7 +552,7 @@ h6 {
   left: 0;
   bottom: 0;
   width: auto;
-  background-image: url(./images/test4.png);
+  /* background-image: url(./images/test4.png); */
   height: 98vh;
   background-position: center;
   background-repeat: no-repeat;
@@ -672,7 +677,7 @@ h2 {
   border: 0px;
 }
 .contact-layout {
-  background-image: url('./images/IMG_9358.jpg');
+  background-image: url('./images/contact.jpg');
   height: 100vh;
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
@@ -979,10 +984,16 @@ h6 {
   height: auto;
 }
 
+.VendeurTel {
+text-decoration:none;
+color: black;
+}
+
 .image-vendeur {
   width: 30%;
   height: auto;
   margin: auto;
+  text-align: center;
   border-radius: 50%;
 }
 
@@ -1001,9 +1012,18 @@ h6 {
   border-radius: 5px;
   background-color: white;
 }
+
+.single-car-info-block2 {
+  margin: 1rem auto;
+}
+
 .desc {
   padding: 3rem;
   margin: 1rem 0;
+}
+
+.center-content {
+  text-align: center;
 }
 
 ul.details li {

@@ -58,7 +58,7 @@ export default class Navbar extends Component {
             <li>
               <Link to="/cars" onClick={this.closeMobileMenu}>
                 {" "}
-                Stock{" "}
+                Showroom{" "}
               </Link>{" "}
             </li>
             <li>

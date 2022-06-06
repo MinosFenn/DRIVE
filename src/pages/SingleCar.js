@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import defaultBcg from '../images/contact.jpg';
+import defaultImg from '../images/contact.jpg';
 import Hero from '../components/Hero';
 import Banner from '../components/Banner';
 import { Link } from 'react-router-dom';
@@ -18,8 +18,8 @@ export default class SingleCar extends Component {
     console.log(this.props);
     this.state = {
       slug: this.props.match.params.slug,
-      defaultBcg,
     };
+    console.log(defaultImg)
   }
   componentDidMount() {
     Aos.init();
@@ -29,9 +29,11 @@ export default class SingleCar extends Component {
   // componentDidMount(){}
 
   render() {
+    const emaildft = "matteo@drive-automobiles.fr";
+    const teldft = "07 68 95 08 07";
+    const namedft = "Matteo Bernard";
     const { getCar } = this.context;
     const car = getCar(this.state.slug);
-    console.log(car);
     if (!car) {
       return (
         <div className="error">
@@ -189,18 +191,18 @@ export default class SingleCar extends Component {
             </div>
             <div data-aos="fade-up" className="single-car-info single-car-info-block2">
               <div data-aos="fade-left" className="desc center-content">
-                <img src={vendeur.fields.file.url} alt="" className="image-vendeur" />
-                <h3 className="VendeurName">{nomVendeur}</h3>
-                <h4>Téléphone: <a href={`tel:${tlphoneVendeur}`} className="VendeurTel">{tlphoneVendeur}</a></h4>
+                {/* <img src={vendeur.fields.file.url}  alt="" className="image-vendeur" /> */}
+                <h3 className="VendeurName">{nomVendeur || namedft}</h3>
+                <h4>Téléphone: <a href={`tel:${tlphoneVendeur || teldft}`} className="VendeurTel">{tlphoneVendeur || teldft}</a></h4>
 
 </div>
               <div className="info">
               <section data-aos="fade-right" className="cta">
               <h3>Nous contacter à propos de ce véhicule:</h3>
 
-              <a href={`mailto:${emailVendeur}?subject=${nom}`} className="btn-cta">
+              <a href={`mailto:${emailVendeur || emaildft}?subject=${nom}`} className="btn-cta">
 
-                {emailVendeur}
+                {emailVendeur || emaildft}
               </a>
 
 

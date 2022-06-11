@@ -990,7 +990,7 @@ color: black;
 }
 
 .image-vendeur {
-  width: 30%;
+  width: 50%;
   height: auto;
   margin: auto;
   text-align: center;
@@ -1149,7 +1149,7 @@ ul.details li .title {
     padding: 2rem 1rem;
   }
 }
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1200px) {
   .single-car-images,
   .single-car-info,
   .car-extras {

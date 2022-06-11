@@ -35,6 +35,7 @@ export default class SingleCar extends Component {
     const namedft = "Matteo Bernard";
     const { getCar } = this.context;
     const car = getCar(this.state.slug);
+
     if (!car) {
       return (
         <div className="error">
@@ -84,6 +85,9 @@ export default class SingleCar extends Component {
     // Select the first div
     // Select div
     console.log(car.soldcars);
+    var phone = {tlphoneVendeur}
+console.log(phone);
+
     return (
       <>
         {' '}
@@ -192,9 +196,9 @@ export default class SingleCar extends Component {
             </div>
             <div data-aos="fade-up" className="single-car-info single-car-info-block2">
               <div data-aos="fade-left" className="desc center-content">
-                {/* <img src={vendeur.fields.file.url}   alt="" className="image-vendeur" /> */}
+                <img src={vendeur.fields.file.url}   alt="" className="image-vendeur" />
                 <h3 className="VendeurName">{nomVendeur || namedft}</h3>
-                <h4>Téléphone: <a href={`tel:${tlphoneVendeur || teldft}`} className="VendeurTel">{tlphoneVendeur || teldft}</a></h4>
+                <h4>Téléphone: <a href={`tel:${tlphoneVendeur || teldft}`} className="VendeurTel">{tlphoneVendeur.toString().replace(/(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})/, '$1 $2 $3 $4 $5') || teldft}</a></h4>
 
 </div>
               <div className="info">

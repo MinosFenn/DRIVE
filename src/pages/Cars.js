@@ -10,7 +10,7 @@ const Cars = () => {
         <Hero hero="carsHero1">
           {" "}
           <Banner
-            title="Stock"
+            title="Showroom"
             subtitle="Retrouvez toute notre collection"
           ></Banner>
         </Hero>

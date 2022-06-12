@@ -16,7 +16,7 @@ export default function Car({ car }) {
   const euro = new Intl.NumberFormat('fr-FR', {
     style: 'currency',
     currency: 'EUR',
-    minimumFractionDigits: 2,
+    minimumFractionDigits: 0,
   });
   const km = new Intl.NumberFormat('fr-FR', {
     style: 'unit',

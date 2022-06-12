@@ -195,17 +195,17 @@ console.log(phone);
               </article>
             </div>
             <div data-aos="fade-up" className="single-car-info single-car-info-block2">
-              <div data-aos="fade-left" className="desc center-content">
+              <div data-aos="fade-left" className="desc-vendeur center-content">
                 <img src={vendeur.fields.file.url}   alt="" className="image-vendeur" />
                 <h3 className="VendeurName">{nomVendeur || namedft}</h3>
                 <h4>Téléphone: <a href={`tel:${tlphoneVendeur || teldft}`} className="VendeurTel">{tlphoneVendeur.toString().replace(/(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})/, '$1 $2 $3 $4 $5') || teldft}</a></h4>
 
 </div>
-              <div className="info">
+              <div className="info-vendeur">
               <section data-aos="fade-right" className="cta">
               <h3>Nous contacter à propos de ce véhicule:</h3>
 
-              <a href={`mailto:${emailVendeur || emaildft}?subject=${nom}`} className="btn-cta">
+              <a href={`mailto:${emailVendeur || emaildft}?subject=${nom}`} className="btn-primary">
 
                 {emailVendeur || emaildft}
               </a>

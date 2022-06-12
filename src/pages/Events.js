@@ -10,7 +10,7 @@ const Events = () => {
         <Hero hero="carsHeroEvent">
           {' '}
           <Banner
-            title="Events"
+            title="Évènements"
             subtitle="Retrouvez tous nos évènements"
           ></Banner>
         </Hero>

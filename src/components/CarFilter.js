@@ -54,7 +54,7 @@ export default function CarFilter({ cars }) {
         {/*end select type*/}
         {/*car price */}
         <div className="form-group">
-          <label htmlFor="prix"> Prix des voitures {prix} euros</label>
+          <label htmlFor="prix"> Prix des voitures {prix.toString().replace(/(\d{3})(\d{3})/, '$1 $2')} euros</label>
           <input
             type="range"
             name="prix"
@@ -69,7 +69,7 @@ export default function CarFilter({ cars }) {
         {/*end select type*/}
         {/*car price asc desc */}
 
-        <div className="form-group">
+        {/* <div className="form-group">
           <label htmlFor="prixdsc" id="testprixdsc" value="prix">
             Prix Décroissant
           </label>
@@ -80,7 +80,7 @@ export default function CarFilter({ cars }) {
             checked={prixdsc}
             onChange={handleChange}
           />
-        </div>
+        </div> */}
         {/*end select type*/}
       </form>
     </section>

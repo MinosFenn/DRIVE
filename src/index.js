@@ -5,7 +5,9 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import ScrollToTop from './components/ScrollToTop';
-import { CarProvider, EventProvider } from './Context';
+import { CarProvider } from './ContextCar';
+import {EventProvider } from './ContextEvent';
+
 import { IntlProvider } from 'react-intl';
 
 ReactDOM.render(

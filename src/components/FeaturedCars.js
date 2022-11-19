@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Title from "./Title";
-
-import { CarContext } from "../Context";
+import { CarContext } from "../ContextCar";
 import Car from "./Car";
 
 import Loading from "./Loading";

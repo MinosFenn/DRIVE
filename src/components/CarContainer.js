@@ -1,7 +1,7 @@
 import React from 'react';
 import CarsFilter from './CarFilter';
 import CarsList from './CarList';
-import { withCarConsumer } from '../Context';
+import { withCarConsumer } from '../ContextCar';
 import Loading from './Loading';
 
 function CarContainer({ context }) {

@@ -1,6 +1,6 @@
 import React from 'react';
 import Event from './Event';
-import { EventContext } from '../Context';
+import { EventContext } from '../ContextEvent';
 
 export default function EventList({ events }) {
   if (events.length === 0) {

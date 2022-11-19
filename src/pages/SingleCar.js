@@ -3,7 +3,7 @@ import defaultImg from '../images/contact.jpg';
 import Hero from '../components/Hero';
 import Banner from '../components/Banner';
 import { Link } from 'react-router-dom';
-import { CarContext } from '../Context';
+import { CarContext } from '../ContextCar';
 import StyledHero from '../components/StyledHero';
 import { SRLWrapper } from 'simple-react-lightbox';
 import Aos from 'aos';

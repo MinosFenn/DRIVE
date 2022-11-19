@@ -1,6 +1,6 @@
 import React from 'react';
 import EventsList from './EventList';
-import { withEventConsumer } from '../Context';
+import { withEventConsumer } from '../ContextEvent';
 import Loading from './Loading';
 
 function EventContainer({ context }) {

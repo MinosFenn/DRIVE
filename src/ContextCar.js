@@ -1,98 +1,9 @@
 import React, { Component } from 'react';
-import items from './data';
 import Client from './Contentful';
 
-Client.getEntries({
-  content_type: 'cars',
-}).then((response) => console.log(response.items));
 
-Client.getEntries({
-  content_type: 'events',
-}).then((response) => console.log(response.items));
 const CarContext = React.createContext();
-const EventContext = React.createContext();
 
-class EventProvider extends Component {
-  state = {
-    events: [],
-    sortedEvents: [],
-    loading: true,
-  };
-  getData = async () => {
-    try {
-      let response = await Client.getEntries({
-        content_type: 'events',
-        order: '-sys.updatedAt',
-      });
-
-      //  set price to croissant otherwise cars is by updated AT and sells stay n price order
-      let events = this.formatData(response.items);
-
-      this.setState({
-        events,
-        loading: false,
-      });
-      //nothing to add
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  // store and pass data
-  componentDidMount() {
-    this.getData();
-    console.log(this.getData());
-  }
-  formatData(items) {
-    let tempItems = items.map((item) => {
-      let id = item.sys.id;
-      let image = item.fields.image.fields.file.url;
-      let event = { ...item.fields, image, id };
-      return event;
-    });
-    return tempItems;
-  }
-
-  // create slug according to event
-  getEvent = (slug) => {
-    let tempEvents = [...this.state.events];
-    const event = tempEvents.find((event) => event.slug === slug);
-    return event;
-  };
-
-  // handleChange = (event) => {
-  // const type = event.target.type;
-  // const name = event.target.name;
-  // const value = event.target.value
-
-  // console.log(type, name, value);
-  // }
-  //   calculate the change in value to reorganise page according to search
-  filterEvents = () => {
-    let { events } = this.state;
-
-    let tempEvents = events;
-
-    this.setState({
-      sortedEvents: tempEvents,
-    });
-  };
-  render() {
-    return (
-      <EventContext.Provider
-        value={{
-          ...this.state,
-          getEvent: this.getEvent,
-          getEvent: this.getEvent,
-
-          handleChange: this.handleChange,
-        }}
-      >
-        {' '}
-        {this.props.children}
-      </EventContext.Provider>
-    );
-  }
-}
 // <CarContext.Provider value={'hello}
 class CarProvider extends Component {
   state = {
@@ -115,24 +26,51 @@ class CarProvider extends Component {
   //getData
   getData = async () => {
     try {
+      
       let response = await Client.getEntries({
         content_type: 'cars',
         order: '-sys.updatedAt',
+        limit: 150,
         // order: "-fields.prix",
       });
+      console.log(response)
+
+      let response1 = await Client.getEntries({
+        content_type: 'cars',
+        order: '-sys.updatedAt',
+        limit: 150,
+        // order: "-fields.prix",
+      });
+      let response2 = await Client.getEntries({
+        content_type: 'cars',
+        order: '-sys.updatedAt',
+        limit: 150,
+        skip: 150,
+        // order: "-fields.prix",
+      });
+      console.log(response)
+      console.log(response2)
+
+
+      let responseAll = [...response1.items, ...response2.items];
+      console.log(responseAll)
 
       //  set price to croissant otherwise cars is by updated AT and sells stay n price order
-      let cars = this.formatData(response.items);
+      let cars2 = this.formatData(response.items);
+      console.log(cars2)
+      const cars = this.formatData(responseAll);
+      console.log(cars)
+
 
       let soldCars = cars.filter((car) => car.soldcars === true);
+      // console.log(soldCars);
+
       let featuredCars = cars.filter((car) => car.featured === true);
       featuredCars = featuredCars.sort(function (a, b) {
         return b.prix - a.prix;
       });
 
-      cars = cars.sort(function (a, b) {
-        return b.prix - a.prix;
-      });
+
       let availableCars = cars.filter((car) => car.soldcars === false);
       // calculate max from the data
       let maxKm = Math.max(...availableCars.map((car) => car.kilométrage));
@@ -159,12 +97,16 @@ class CarProvider extends Component {
     this.getData();
   }
   formatData(items) {
+      console.log(items)
+
     let tempItems = items.map((item) => {
       let id = item.sys.id;
       let images = item.fields.images.map((image) => image.fields.file.url);
       let car = { ...item.fields, images, id };
       return car;
     });
+    console.log(tempItems)
+
     return tempItems;
   }
 
@@ -263,7 +205,6 @@ class CarProvider extends Component {
     );
   }
 }
-const EventConsumer = EventContext.Consumer;
 
 const CarConsumer = CarContext.Consumer;
 
@@ -278,21 +219,10 @@ export function withCarConsumer(Component) {
   };
 }
 
-export function withEventConsumer(Component) {
-  return function ConsumerWrapper(props) {
-    return (
-      <EventConsumer>
-        {(value) => <Component {...props} context={value} />}
-      </EventConsumer>
-    );
-  };
-}
+
 
 export {
   CarProvider,
   CarConsumer,
   CarContext,
-  EventProvider,
-  EventConsumer,
-  EventContext,
 };

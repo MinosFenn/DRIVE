@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Hero from '../components/Hero';
 import Banner from '../components/Banner';
 import { Link } from 'react-router-dom';
-import { EventContext } from '../Context';
+import { EventContext } from '../ContextEvent';
 import StyledHero from '../components/StyledHero';
 import Aos from 'aos';
 import 'aos/dist/aos.css';

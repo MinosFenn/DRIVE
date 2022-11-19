@@ -1,6 +1,6 @@
 import React from 'react';
 import { useContext } from 'react';
-import { CarContext } from '../Context';
+import { CarContext } from '../ContextCar';
 import Title from '../components/Title';
 //get all unique values
 const getUnique = (items, value) => {
@@ -45,7 +45,7 @@ export default function CarFilter({ cars }) {
             name="marque"
             id="marque"
             value={marque}
-            className="form-control"
+            className="select-control"
             onChange={handleChange}
           >
             {marques}

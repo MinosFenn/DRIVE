@@ -58,7 +58,11 @@ class CarProvider extends Component {
       //  set price to croissant otherwise cars is by updated AT and sells stay n price order
       let cars2 = this.formatData(response.items);
       console.log(cars2)
-      const cars = this.formatData(responseAll);
+      let cars = this.formatData(responseAll);
+      cars = cars.sort(function (a, b) {
+        return b.prix - a.prix;
+      });
+
       console.log(cars)
 
 
@@ -74,9 +78,10 @@ class CarProvider extends Component {
 
 
       let availableCars = cars.filter((car) => car.soldcars === false);
-      availableCars = availableCars.sort(function (a, b) {
+      cars = cars.sort(function (a, b) {
         return b.prix - a.prix;
       });
+
       // calculate max from the data
       let maxKm = Math.max(...availableCars.map((car) => car.kilométrage));
       let maxPrice = Math.max(...availableCars.map((car) => car.prix));

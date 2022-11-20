@@ -71,7 +71,12 @@ class CarProvider extends Component {
       });
 
 
+
+
       let availableCars = cars.filter((car) => car.soldcars === false);
+      availableCars = availableCars.sort(function (a, b) {
+        return b.prix - a.prix;
+      });
       // calculate max from the data
       let maxKm = Math.max(...availableCars.map((car) => car.kilométrage));
       let maxPrice = Math.max(...availableCars.map((car) => car.prix));

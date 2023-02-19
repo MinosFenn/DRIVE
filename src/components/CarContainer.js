@@ -6,8 +6,8 @@ import Loading from './Loading';
 
 function CarContainer({ context }) {
   const { loading, sortedCars, cars, availableCars } = context;
-  console.log(cars);
-  console.log(context);
+  // console.log(cars);
+  // console.log(context);
   if (loading) {
     return <Loading />;
   }

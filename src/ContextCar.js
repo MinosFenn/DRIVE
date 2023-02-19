@@ -11,7 +11,7 @@ class CarProvider extends Component {
     sortedCars: [],
     featuredCars: [],
     soldCars: [],
-    loading: true,
+    loading: false,
     type: 'Tous',
     marque: 'Toutes marques',
     capacity: 1,
@@ -33,8 +33,6 @@ class CarProvider extends Component {
         limit: 150,
         // order: "-fields.prix",
       });
-      console.log(response)
-
       let response1 = await Client.getEntries({
         content_type: 'cars',
         order: '-sys.updatedAt',
@@ -48,34 +46,34 @@ class CarProvider extends Component {
         skip: 150,
         // order: "-fields.prix",
       });
-      console.log(response)
-      console.log(response2)
+      let response3 = await Client.getEntries({
+        content_type: 'cars',
+        order: '-sys.updatedAt',
+        limit: 150,
+        skip: 150,
+        // order: "-fields.prix",
+      });
+ 
 
 
-      let responseAll = [...response1.items, ...response2.items];
-      console.log(responseAll)
+      let responseAll = [...response.items, ...response1.items, ...response2.items, ...response3.items, ];
 
+
+
+ 
       //  set price to croissant otherwise cars is by updated AT and sells stay n price order
-      let cars2 = this.formatData(response.items);
-      console.log(cars2)
+
       let cars = this.formatData(responseAll);
       cars = cars.sort(function (a, b) {
         return b.prix - a.prix;
       });
 
-      console.log(cars)
-
-
       let soldCars = cars.filter((car) => car.soldcars === true);
-      // console.log(soldCars);
 
       let featuredCars = cars.filter((car) => car.featured === true);
       featuredCars = featuredCars.sort(function (a, b) {
         return b.prix - a.prix;
       });
-
-
-
 
       let availableCars = cars.filter((car) => car.soldcars === false);
       cars = cars.sort(function (a, b) {
@@ -107,18 +105,17 @@ class CarProvider extends Component {
     this.getData();
   }
   formatData(items) {
-      console.log(items)
-
     let tempItems = items.map((item) => {
       let id = item.sys.id;
       let images = item.fields.images.map((image) => image.fields.file.url);
       let car = { ...item.fields, images, id };
       return car;
     });
-    console.log(tempItems)
 
     return tempItems;
   }
+
+
 
   // create slug according to car
   getCar = (slug) => {

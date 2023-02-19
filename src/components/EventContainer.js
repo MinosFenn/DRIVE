@@ -5,8 +5,8 @@ import Loading from './Loading';
 
 function EventContainer({ context }) {
   const { loading, events, sortedEvents } = context;
-  console.log(events);
-  console.log(context);
+  // console.log(events);
+  // console.log(context);
   if (loading) {
     return <Loading />;
   }

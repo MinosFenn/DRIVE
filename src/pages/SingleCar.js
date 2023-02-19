@@ -15,12 +15,12 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 export default class SingleCar extends Component {
   constructor(props) {
     super(props);
-    console.log(this.props);
+    // console.log(this.props);
     this.state = {
       slug: this.props.match.params.slug,
       defaultImg,
     };
-    console.log(defaultImg)
+    // console.log(defaultImg)
   }
   componentDidMount() {
     Aos.init();
@@ -69,7 +69,7 @@ export default class SingleCar extends Component {
       extras,
       images,
     } = car;
-    console.log(car);
+    // console.log(car);
     // console.log(car.richdescription.json);
 
     const euro = new Intl.NumberFormat('fr-FR', {
@@ -84,9 +84,9 @@ export default class SingleCar extends Component {
     });
     // Select the first div
     // Select div
-    console.log(car.soldcars);
+    // console.log(car.soldcars);
     var phone = {tlphoneVendeur}
-console.log(phone);
+// console.log(phone);
 
     return (
       <>

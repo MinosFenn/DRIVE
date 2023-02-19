@@ -9,7 +9,7 @@ export default class SoldCars extends Component {
 
   render() {
     let { loading, soldCars: cars } = this.context;
-    console.log(cars);
+    // console.log(cars);
     cars = cars.map((car) => {
       // console.log(car)
 

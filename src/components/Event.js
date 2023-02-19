@@ -9,7 +9,7 @@ import 'aos/dist/aos.css';
 
 export default function Event({ event }) {
   // console.log(this.props);
-  console.log(event);
+  // console.log(event);
   const { title, image, dates, slug } = event;
   useEffect(() => {
     Aos.init({ duration: 3000 });

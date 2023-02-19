@@ -4,7 +4,7 @@ import { EventContext } from '../ContextEvent';
 
 export default function EventList({ events }) {
   if (events.length === 0) {
-    console.log(events);
+    // console.log(events);
 
     return (
       <div className="empty-search">

@@ -4,7 +4,7 @@ import { CarContext } from '../ContextCar';
 
 export default function CarList({ cars }) {
   if (cars.length === 0) {
-    console.log(cars);
+    // console.log(cars);
 
     return (
       <div className="empty-search">

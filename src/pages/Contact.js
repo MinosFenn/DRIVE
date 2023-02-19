@@ -24,9 +24,7 @@ export default function Contact() {
             >
               matteo@drive-automobiles.fr
             </a>
-            <a href="tel:0750414930" className="btn-contact">
-              07 50 41 49 30
-            </a>
+
             <h2>Nous trouver</h2>
 
             <iframe

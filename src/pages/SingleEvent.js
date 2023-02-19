@@ -13,7 +13,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 export default class SingleEvent extends Component {
   constructor(props) {
     super(props);
-    console.log(this.props);
+    // console.log(this.props);
     this.state = {
       slug: this.props.match.params.slug,
     };
@@ -28,7 +28,7 @@ export default class SingleEvent extends Component {
   render() {
     const { getEvent } = this.context;
     const event = getEvent(this.state.slug);
-    console.log(event);
+    // console.log(event);
     if (!event) {
       return (
         <div className="error">
@@ -40,7 +40,7 @@ export default class SingleEvent extends Component {
       );
     }
     const { title, description, lien, location, image, cta, ctalink } = event;
-    console.log(location.long);
+    // console.log(location.long);
 
     // console.log(car.richdescription.json);
     return (

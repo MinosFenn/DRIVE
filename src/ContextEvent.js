@@ -34,7 +34,7 @@ import Client from './Contentful';
     //   console.log(this.getData());
     }
     formatData(items) {
-        console.log(items)
+        // console.log(items)
       let tempItems = items.map((item) => {
         let id = item.sys.id;
         let image = item.fields.image.fields.file.url;

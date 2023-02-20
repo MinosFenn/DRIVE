@@ -37,20 +37,22 @@ class CarProvider extends Component {
         content_type: 'cars',
         order: '-sys.updatedAt',
         limit: 150,
+        skip: 150,
+
         // order: "-fields.prix",
       });
       let response2 = await Client.getEntries({
         content_type: 'cars',
         order: '-sys.updatedAt',
         limit: 150,
-        skip: 150,
+        skip: 300,
         // order: "-fields.prix",
       });
       let response3 = await Client.getEntries({
         content_type: 'cars',
         order: '-sys.updatedAt',
         limit: 150,
-        skip: 150,
+        skip: 450,
         // order: "-fields.prix",
       });
  

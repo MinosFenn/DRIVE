@@ -1,0 +1,26 @@
+implement this slider for home page:
+https://www.youtube.com/watch?v=iBcjzaOvE94&ab_channel=LunDev
+
+Integrate this for cars selection:
+https://www.youtube.com/watch?v=PsNaoDhzQm0&list=PLpwngcHZlPae68z_mLFNfbJFIJVJ_Zcx2&index=1&ab_channel=CodingNepal
+or this
+https://codepen.io/RaduBratan/pen/GRoryXm
+
+
+
+re-use this first one for single page 
+
+
+rework car cards
+
+implement catch errors and replace (exemple: image manquante remplacer par une donné par défaut, pareil pour autres elements textes etc)
+
+re déssiner le logo
+
+retravailler le lazy load
+
+ajouter des contenus (equipe, histoire etc...)
+
+inégrer instagram et les avis
+
+intégrer google analytics (pour voir si le sgens regardent encore les vieux modèles etc)

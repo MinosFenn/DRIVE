@@ -60,10 +60,8 @@ class CarProvider extends Component {
 
       let responseAll = [...response.items, ...response1.items, ...response2.items, ...response3.items, ];
 
+console.log(responseAll)
 
-
- 
-      //  set price to croissant otherwise cars is by updated AT and sells stay n price order
 
       let cars = this.formatData(responseAll);
       cars = cars.sort(function (a, b) {
@@ -103,18 +101,59 @@ class CarProvider extends Component {
     }
   };
   // store and pass data
+
+
+  
   componentDidMount() {
     this.getData();
   }
-  formatData(items) {
-    let tempItems = items.map((item) => {
-      let id = item.sys.id;
-      let images = item.fields.images.map((image) => image.fields.file.url);
-      let car = { ...item.fields, images, id };
-      return car;
-    });
 
-    return tempItems;
+  formatData(items) {
+    // let tempItems = items.map((item) => {
+    //   let id = item.sys.id;
+    //   let images = item.fields.images.map((image) => image.fields.file.url);
+    //   let car = { ...item.fields, images, id };
+    //   return car;
+    // });
+    // return tempItems;
+    try {
+      let tempItems = items.map((item, index) => {
+        // Log iteration number
+        console.log(`Processing item ${index + 1}`);
+  
+        // Check if 'item.fields' or 'item.fields.images' is undefined before accessing properties
+        if (!item.fields || !item.fields.images) {
+          console.log(`Error: 'item.fields' or 'item.fields.images' is undefined at iteration ${index + 1}`);
+          return null; // Return null for the problematic item
+        }
+  
+        let id = item.sys.id;
+        let images = item.fields.images.map((image) => {
+          // Check if 'image.fields' or 'image.fields.file' is undefined before accessing properties
+          if (!image.fields || !image.fields.file) {
+            console.log(`Error: 'image.fields' or 'image.fields.file' is undefined for image in item ${index + 1}`);
+            return null; // Return null for the problematic image
+          }
+          return image.fields.file.url;
+        });
+  
+        // Filter out null images (images that caused errors)
+        images = images.filter(image => image !== null);
+  
+        let car = { ...item.fields, images, id };
+        return car;
+      });
+  
+      // Filter out null items (items that caused errors)
+      tempItems = tempItems.filter(item => item !== null);
+  
+      return tempItems;
+    } catch (error) {
+      console.log(error);
+      return []; // Return empty array in case of error
+    }
+
+
   }
 
 

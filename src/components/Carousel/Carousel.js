@@ -22,7 +22,8 @@ const Carousel = () => {
             const slideDescription = fields.description;
             const slideBG = fields.images.fields.file.url;
             const slideBTN = fields.boutton;
-            const updatedSlide = { id, slideTitle, slideDescription, slideBG, slideBTN };
+            const slideBTNURL = fields.buttonUrl;
+            const updatedSlide = { id, slideTitle, slideDescription, slideBG, slideBTN, slideBTNURL };
             return updatedSlide;
         });
         setCarouselSlides(cleanSlides);
@@ -33,7 +34,7 @@ const Carousel = () => {
         try {
             const response = await Client.getEntries({ content_type: 'slider' });
             const responseData = response.items;
-            console.log(responseData);
+            // console.log(responseData);
             
             if (responseData) {
                 cleanUpCarouselSlides(responseData);
@@ -42,7 +43,7 @@ const Carousel = () => {
             }
             setIsCarouselLoading(false);
         } catch (error) {
-            console.log(error);
+            // console.log(error);
             setIsCarouselLoading(false);
         }
     }, [cleanUpCarouselSlides]);
@@ -62,11 +63,11 @@ const Carousel = () => {
             pagination={{ clickable: true }}
             scrollbar={{ draggable: true }}
             centeredSlides 
-            onSlideChange={() => console.log('slide change')}
-      onSwiper={(swiper) => console.log(swiper)}
+    //         onSlideChange={() => console.log('slide change')}
+    //   onSwiper={(swiper) => console.log(swiper)}
                     >
             {carouselSlides.map((item) => {
-                const { id, slideBG, slideBTN, slideDescription, slideTitle } = item;
+                const { id, slideBG, slideBTN, slideDescription, slideTitle, slideBTNURL } = item;
                 return (
                     <SwiperSlide key={id}>
                         <CarouselSlide  
@@ -74,6 +75,7 @@ const Carousel = () => {
                             slideDescription={slideDescription}
                             slideBG={slideBG}
                             slideBTN={slideBTN}
+                            slideBTNURL={slideBTNURL}
                         />
                     </SwiperSlide>
                 );

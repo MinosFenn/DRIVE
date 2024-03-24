@@ -1,12 +1,11 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
 import '../Carousel/partials/carousel.css' 
 
 import Aos from "aos";
 import "aos/dist/aos.css";
 
 const CarouselSlide = (props) => {
-    const {id, slideTitle, slideDescription, slideBG, slideBTN} = props
+    const {id, slideTitle, slideDescription, slideBG, slideBTN, slideBTNURL} = props
     useEffect(() => {
       Aos.init();
     }, []);
@@ -18,7 +17,7 @@ const CarouselSlide = (props) => {
         <h2 className="titleSlider">{slideTitle}</h2>
         <div className ="spacer"></div>
         <p className="descriptionSlider">{slideDescription}</p>
-        <a href="/cars" className="btn">
+        <a href={`/${slideBTNURL}`} className="btn">
             {slideBTN}
           </a>
           </div>

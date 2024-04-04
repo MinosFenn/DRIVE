@@ -29,41 +29,35 @@ class CarProvider extends Component {
       
       let response = await Client.getEntries({
         content_type: 'cars',
-        order: '-sys.updatedAt',
+        order: '-fields.prix',
         limit: 150,
-        // order: "-fields.prix",
       });
       let response1 = await Client.getEntries({
         content_type: 'cars',
-        order: '-sys.updatedAt',
+        order: '-fields.prix',
         limit: 150,
         skip: 150,
-
-        // order: "-fields.prix",
       });
       let response2 = await Client.getEntries({
         content_type: 'cars',
-        order: '-sys.updatedAt',
+        order: '-fields.prix',
         limit: 150,
         skip: 300,
-        // order: "-fields.prix",
       });
       let response3 = await Client.getEntries({
         content_type: 'cars',
-        order: '-sys.updatedAt',
+        order: '-fields.prix',
         limit: 150,
         skip: 450,
-        // order: "-fields.prix",
       });
  
 
 
       let responseAll = [...response.items, ...response1.items, ...response2.items, ...response3.items, ];
-
-console.log(responseAll)
-
+      console.log(responseAll)
 
       let cars = this.formatData(responseAll);
+      //order price descending
       cars = cars.sort(function (a, b) {
         return b.prix - a.prix;
       });
@@ -100,7 +94,6 @@ console.log(responseAll)
       console.log(error);
     }
   };
-  // store and pass data
 
 
   
@@ -109,6 +102,7 @@ console.log(responseAll)
   }
 
   formatData(items) {
+    console.log(items)
     // let tempItems = items.map((item) => {
     //   let id = item.sys.id;
     //   let images = item.fields.images.map((image) => image.fields.file.url);
@@ -118,12 +112,13 @@ console.log(responseAll)
     // return tempItems;
     try {
       let tempItems = items.map((item, index) => {
+
         // Log iteration number
-        console.log(`Processing item ${index + 1}`);
+        // console.log(`Processing item ${index + 1}`);
   
         // Check if 'item.fields' or 'item.fields.images' is undefined before accessing properties
         if (!item.fields || !item.fields.images) {
-          console.log(`Error: 'item.fields' or 'item.fields.images' is undefined at iteration ${index + 1}`);
+          // console.log(`Error: 'item.fields' or 'item.fields.images' is undefined at iteration ${index + 1}`);
           return null; // Return null for the problematic item
         }
   
@@ -131,7 +126,7 @@ console.log(responseAll)
         let images = item.fields.images.map((image) => {
           // Check if 'image.fields' or 'image.fields.file' is undefined before accessing properties
           if (!image.fields || !image.fields.file) {
-            console.log(`Error: 'image.fields' or 'image.fields.file' is undefined for image in item ${index + 1}`);
+            // console.log(`Error: 'image.fields' or 'image.fields.file' is undefined for image in item ${index + 1}`);
             return null; // Return null for the problematic image
           }
           return image.fields.file.url;
@@ -146,6 +141,8 @@ console.log(responseAll)
   
       // Filter out null items (items that caused errors)
       tempItems = tempItems.filter(item => item !== null);
+
+
   
       return tempItems;
     } catch (error) {
@@ -216,6 +213,7 @@ console.log(responseAll)
 
     //filter by price bar
     tempCars = tempCars.filter((car) => car.prix <= prix);
+    console.log(tempCars)
 
     //filter by price dsc
     // if (prixdsc) {

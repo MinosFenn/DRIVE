@@ -14,12 +14,12 @@ const CarouselSlide = (props) => {
 <div data-aos="fade-in" className="slideWrap" style={{ backgroundImage: `url(${slideBG})`}}> 
 <div data-aos="slide-up"className="backgroundOverlay">
     <div div className="textWrap">
-        <h2 className="titleSlider">{slideTitle}</h2>
+        {/* <h2 className="titleSlider">{slideTitle}</h2>
         <div className ="spacer"></div>
         <p className="descriptionSlider">{slideDescription}</p>
         <a href={`/${slideBTNURL}`} className="btn">
             {slideBTN}
-          </a>
+          </a> */}
           </div>
           </div>
           </div> 
